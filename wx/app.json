@@ -1,0 +1,53 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/service/service",
+    "pages/report/report",
+    "pages/date/date",
+    "pages/person/person",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#FF8966",
+    "navigationBarTitleText": "校园疫情防控系统",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "selectedColor": "#FF8966",
+    "list": [
+      {
+      "pagePath": "pages/home/home",
+      "text": "首页",
+      "iconPath": "/icon/_home.png",
+      "selectedIconPath":"/icon/home.png"
+      },{
+      "pagePath": "pages/service/service",
+      "text": "服务",
+      "iconPath": "/icon/_service.png",
+      "selectedIconPath":"/icon/service.png"
+      },{
+      "pagePath": "pages/report/report",
+      "text": "日报",
+      "iconPath": "/icon/_report.png",
+      "selectedIconPath":"/icon/report.png"
+      },{
+      "pagePath": "pages/date/date",
+      "text": "日程",
+      "iconPath": "/icon/_date.png",
+      "selectedIconPath":"/icon/date.png"
+      },{
+      "pagePath": "pages/person/person",
+      "text": "我的",
+      "selectedColor": "#FF8966",
+      "iconPath": "/icon/_person.png",
+      "selectedIconPath":"/icon/person.png"
+      }
+  ]
+},
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}
