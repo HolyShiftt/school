@@ -1,13 +1,36 @@
 // pages/report/report.js
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-
+    address:"111",
+    date:''
   },
-
+// 设置打卡时间
+setSignTime: function (e) {
+  var that = this;
+  var hour = ((+e.detail.value.slice(0, 2) + 24 - 2) % 24).toString();
+  that.setData({
+    'date': e.detail.value,
+  });
+},
+  chooseLocation: function () {
+    var that = this;
+    wx.chooseLocation({
+      success: function(res){
+        that.setData({
+          'address': res.address,
+        })
+      },
+      fail: function() {
+        // fail
+      },
+      complete: function() {
+        // complete
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -19,7 +42,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    
   },
 
   /**

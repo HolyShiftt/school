@@ -1,2 +1,50 @@
 <!--pages/home/home.wxml-->
-<text>pages/home/home.wxml</text>
+<view style="background-color: #F6F6F6;height: 100%;">
+  <image src="../../img/home.jpg" style="width: 100%;height: 130px;"></image>
+  <view style="display: block;">
+    <view style="display: flex;text-align: center;margin-top: 20px;">
+      <view style="width: 25%;">
+        <image src="../../icon/logo.png" style="width: 40px;height: 40px;" bindtap='goBaidu'></image>
+        <view>学校官网</view>
+      </view>
+      <view style="width: 25%;">
+        <image src="../../icon/logo.png" style="width: 40px;height: 40px;"></image>
+        <view>学校官网</view>
+      </view>
+      <view style="width: 25%;">
+        <image src="../../icon/logo.png" style="width: 40px;height: 40px;"></image>
+        <view>学校官网</view>
+      </view>
+      <view style="width: 25%;">
+        <image src="../../icon/logo.png" style="width: 40px;height: 40px;"></image>
+        <view>学校官网</view>
+      </view>
+    </view>
+    <view style="display: flex;text-align: center;margin-top: 20px;">
+      <view style="width: 25%;">
+        <image src="../../icon/logo.png" style="width: 40px;height: 40px;"></image>
+        <view>学校官网</view>
+      </view>
+      <view style="width: 25%;">
+        <image src="../../icon/logo.png" style="width: 40px;height: 40px;"></image>
+        <view>学校官网</view>
+      </view>
+      <view style="width: 25%;">
+        <image src="../../icon/logo.png" style="width: 40px;height: 40px;"></image>
+        <view>学校官网</view>
+      </view>
+      <view style="width: 25%;">
+        <image src="../../icon/logo.png" style="width: 40px;height: 40px;"></image>
+        <view>学校官网</view>
+      </view>
+    </view>
+  </view>
+  <view style="background-color:white; border-radius: 50px;width: 30%;margin:10px;margin-top: 20px;">
+    <view style="display: flex;">
+      <image src="../../icon/notice.png" style="height: 30px;width: 30px;margin:5px"></image>
+      <text style="margin-top: 7px;">系统公告</text>
+    </view>
+    <view>
+    </view>
+  </view>
+</view>

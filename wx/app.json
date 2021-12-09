@@ -1,12 +1,13 @@
 {
   "pages": [
     "pages/home/home",
-    "pages/service/service",
     "pages/report/report",
+    "pages/service/service",
     "pages/date/date",
     "pages/person/person",
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/schoolWeb/schoolWeb"
   ],
   "window": {
     "backgroundTextStyle": "dark",

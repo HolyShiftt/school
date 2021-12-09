@@ -1,0 +1,2 @@
+<!--pages/schoolWeb/schoolWeb.wxml-->
+<web-view src="https://www.fdzcxy.edu.cn/main/"></web-view>

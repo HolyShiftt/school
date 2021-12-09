@@ -1,4 +1,4 @@
-// pages/home/home.js
+// pages/schoolWeb/schoolWeb.js
 Page({
 
   /**
@@ -6,13 +6,6 @@ Page({
    */
   data: {
 
-  },
-
-  goBaidu: function () {
-    wx.navigateTo({
-      url: '../schoolWeb/schoolWeb',
-      success: function () {}, //成功后的回调；
-    })
   },
 
   /**
