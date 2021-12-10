@@ -8,10 +8,21 @@ Page({
 
   },
 
-  goBaidu: function () {
+  goSchoolPage: function () {
     wx.navigateTo({
       url: '../schoolWeb/schoolWeb',
       success: function () {}, //成功后的回调；
+    })
+  },
+
+  getA: function() {
+    console.log("start")
+    wx.request({
+      url: 'http://127.0.0.1:8080/',
+      data: {},
+      success: function (data) {
+        console.log(data)
+      }
     })
   },
 
