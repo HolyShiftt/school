@@ -5,4 +5,7 @@
     <select id="selectAll" resultType="com.school.index.pojo.User">
         select * from `user`
     </select>
+    <select id="getUserByUsername" resultType="com.school.index.pojo.User">
+        select * from user where username = #{username}
+    </select>
 </mapper>
