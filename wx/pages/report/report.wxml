@@ -8,31 +8,31 @@
       <h2 style="float: left;">211806336</h2>
       <h2 style="float: right;">廖鸿志</h2>
     </view>
-    <view class="weui-form__control-area" style="margin-top: 20px;margin-bottom: 0;" bindtap="chooseLocation">
+    <view class="weui-form__control-area" style="margin-top: 20px;margin-bottom: 0;">
       <view class="weui-cells__group weui-cells__group_form">
 
         <view class="weui-cells__title">1.目前所在位置</view>
         <view class="weui-cell weui-cell_active">
           <view class="weui-cell__hd"><label class="weui-label">地址</label></view>
-          <view class="weui-cell__bd">
-            <input class="weui-input" placeholder="目前所在位置" placeholder-class="weui-input__placeholder"
-              value="{{address}}" />
+          <view class="weui-cell__bd"  bindtap="chooseLocation">
+            <input class="weui-input" placeholder="点击获取当前位置" placeholder-class="weui-input__placeholder"
+              value="{{address}}" disabled="true" />
           </view>
         </view>
 
         <view class="weui-cells__title">2.填报时间</view>
         <view class="weui-cell weui-cell_active">
           <view class="weui-cell__hd"><label class="weui-label">时间</label></view>
-          <view class="weui-cell__bd">
+          <view class="weui-cell__bd" bindtap="">
             <input class="weui-input" placeholder="填报时间" placeholder-class="weui-input__placeholder" disabled="true"
-              value="{{date}}" />
+              value="{{time}}" />
           </view>
         </view>
 
         <view class="weui-cells__title">3.今日体温是否正常？（体温小于37.3度为正常）</view>
         <radio-group class="weui-cell weui-cell_active" style="display: flex;text-align: center;">
           <label class="radio" style="width: 50%;">
-            <radio value="r1" />正常
+            <radio value="r1" checked="true"/>正常
           </label>
           <label class="radio" style="width: 50%;">
             <radio value="r2" />发热
@@ -47,22 +47,22 @@
 
         <view class="weui-cells__title">4.昨日午检体温</view>
         <view class="weui-cell weui-cell_active">
-          <input class="weui-input" placeholder="昨日午检体温" placeholder-class="weui-input__placeholder" disabled="true" />
+          <input class="weui-input" placeholder="昨日午检体温" placeholder-class="weui-input__placeholder" value="36.2"/>
         </view>
 
         <view class="weui-cells__title">5.昨日晚检体温</view>
         <view class="weui-cell weui-cell_active">
-          <input class="weui-input" placeholder="昨日晚检体温" placeholder-class="weui-input__placeholder" disabled="true" />
+          <input class="weui-input" placeholder="昨日晚检体温" placeholder-class="weui-input__placeholder" value="36.4"/>
         </view>
 
         <view class="weui-cells__title">6.今日晨检体温</view>
         <view class="weui-cell weui-cell_active">
-          <input class="weui-input" placeholder="今日晨检体温" placeholder-class="weui-input__placeholder" disabled="true" />
+          <input class="weui-input" placeholder="今日晨检体温" placeholder-class="weui-input__placeholder" value="36.2"/>
         </view>
 
         <view class="weui-cells__title">7.今日健康状况</view>
         <view class="weui-cell weui-cell_active">
-          <input class="weui-input" placeholder="昨日晚检体温" placeholder-class="weui-input__placeholder" disabled="true" />
+          <input class="weui-input" placeholder="昨日晚检体温" placeholder-class="weui-input__placeholder" value=""/>
         </view>
 
         <view class="weui-cells__title">8.近14日你和你的共同居住者（包括家庭成员、共同租住的人员）是否存在确诊、疑似、无症状新冠感染者？</view>

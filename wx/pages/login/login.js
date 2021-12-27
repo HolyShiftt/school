@@ -20,7 +20,7 @@ Page({
 
       // 登录 
       login: function () {
-
+        var username = this.data.phone
         wx.request({
           url: 'http://127.0.0.1:8080/login',
           data: {
@@ -29,7 +29,8 @@ Page({
           },
           success: function (d) {
             if (d.data == "登录成功") {
-              sessionStorage.setItem("username",username);
+              console.log(username)
+              // sessionStorage.setItem("username",username);
               wx.showToast({
                 title: d.data,
                 icon: 'success',

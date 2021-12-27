@@ -1,32 +1,27 @@
 // pages/report/report.js
+
+var util = require('../../utils/util')
 Page({
   /**
    * 页面的初始数据
    */
   data: {
-    address:"111",
-    date:''
+    address: "",
+    time: ''
   },
-// 设置打卡时间
-setSignTime: function (e) {
-  var that = this;
-  var hour = ((+e.detail.value.slice(0, 2) + 24 - 2) % 24).toString();
-  that.setData({
-    'date': e.detail.value,
-  });
-},
+  
   chooseLocation: function () {
     var that = this;
     wx.chooseLocation({
-      success: function(res){
+      success: function (res) {
         that.setData({
           'address': res.address,
         })
       },
-      fail: function() {
+      fail: function () {
         // fail
       },
-      complete: function() {
+      complete: function () {
         // complete
       }
     })
@@ -35,14 +30,17 @@ setSignTime: function (e) {
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+   
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
+    var TIME = util.formatTime(new Date());
+    this.setData({
+    time: TIME,
+    });
   },
 
   /**
