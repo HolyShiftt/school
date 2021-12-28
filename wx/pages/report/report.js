@@ -7,7 +7,8 @@ Page({
    */
   data: {
     address: "",
-    time: ''
+    time: '',
+    username:wx.getStorageSync('username')
   },
   
   chooseLocation: function () {

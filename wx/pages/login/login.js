@@ -29,8 +29,7 @@ Page({
           },
           success: function (d) {
             if (d.data == "登录成功") {
-              console.log(username)
-              // sessionStorage.setItem("username",username);
+              wx.setStorageSync("username",username);
               wx.showToast({
                 title: d.data,
                 icon: 'success',
