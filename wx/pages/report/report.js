@@ -8,6 +8,7 @@ Page({
   data: {
     address: "",
     time: '',
+    isNormal:'',
     username:wx.getStorageSync('username')
   },
   
@@ -24,6 +25,33 @@ Page({
       },
       complete: function () {
         // complete
+      }
+    })
+  },
+
+  report: function () {
+    wx.request({
+      url: 'http://127.0.0.1:8080/report/doReport',
+      data: {
+        address: this.data.address,
+        time: this.data.time,
+        isNormal: this.data.isNormal
+      },
+      success: function (d) {
+        if (d.data == "登录成功") {
+          wx.showToast({
+            title: d.data,
+            icon: 'success',
+            success: function () {
+            }
+          })
+        } else {
+          wx.showToast({
+            title: d.data,
+            icon: 'error',
+            duration: 2000
+          })
+        }
       }
     })
   },

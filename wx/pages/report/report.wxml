@@ -32,10 +32,10 @@
         <view class="weui-cells__title">3.今日体温是否正常？（体温小于37.3度为正常）</view>
         <radio-group class="weui-cell weui-cell_active" style="display: flex;text-align: center;">
           <label class="radio" style="width: 50%;">
-            <radio value="r1" checked="true"/>正常
+            <radio value="{{isNormal==1}}" checked="true"/>正常
           </label>
           <label class="radio" style="width: 50%;">
-            <radio value="r2" />发热
+            <radio value="{{isNormal==2}}" />发热
           </label>
         </radio-group>
         <view class="weui-cell" hidden="true">
@@ -63,12 +63,6 @@
         <view class="weui-cells__title">7.今日健康状况</view>
         <view class="weui-cell weui-cell_active">
           <input class="weui-input" placeholder="昨日晚检体温" placeholder-class="weui-input__placeholder" value=""/>
-        </view>
-
-        <view class="weui-cells__title">8.近14日你和你的共同居住者（包括家庭成员、共同租住的人员）是否存在确诊、疑似、无症状新冠感染者？</view>
-        <view class="weui-cell weui-cell_active">
-          <input class="weui-input" placeholder="近14日你和你的共同居住者" placeholder-class="weui-input__placeholder"
-            disabled="true" />
         </view>
 
         <view class="weui-cells__title">9.今日隔离情况</view>
@@ -99,7 +93,7 @@
       </view>
     </view>
     <view class="weui-form__opr-area">
-      <a aria-role="button" class="weui-btn weui-btn_primary">提交信息</a>
+      <a aria-role="button" class="weui-btn weui-btn_primary" bindtap="report">提交信息</a>
     </view>
   </view>
 </view>

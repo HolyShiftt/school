@@ -4,8 +4,8 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    username: root
-    password: root
+    username: admin
+    password: biyesheji
     url: jdbc:mysql://8.143.9.57:3306/school?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&serverTimezone=UTC
 
 mybatis:

@@ -18,7 +18,6 @@ public class UserController {
 
     @RequestMapping("/login")
     @ResponseBody
-    @Logger
     public String login(String username, String password){
         User user = userService.getUserByUsername(username);
         if (user!=null){
