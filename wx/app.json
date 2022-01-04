@@ -1,6 +1,5 @@
 {
   "pages": [
-    "pages/login/login",
     "pages/home/home",
     "pages/report/report",
     "pages/service/service",
@@ -8,7 +7,9 @@
     "pages/person/person",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/schoolWeb/schoolWeb"
+    "pages/schoolWeb/schoolWeb",
+    "pages/login/login",
+    "pages/person/issues"
   ],
   "window": {
     "backgroundTextStyle": "dark",

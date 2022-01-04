@@ -1,5 +1,10 @@
 /**app.wxss**/
 @import "weui.wxss";
+page{
+  line-height: 150%;
+  color: #666;
+  height: 100%;
+}
 .container {
   height: 100%;
   display: flex;

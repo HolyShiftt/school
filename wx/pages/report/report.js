@@ -13,20 +13,29 @@ Page({
   },
   
   chooseLocation: function () {
-    var that = this;
-    wx.chooseLocation({
-      success: function (res) {
-        that.setData({
-          'address': res.address,
-        })
-      },
-      fail: function () {
-        // fail
-      },
-      complete: function () {
-        // complete
+    wx.getSetting({
+      success (res) {
+        if(!res.authSetting.address){
+          wx.openSetting({})
+        }else{
+          var that = this;
+          wx.chooseLocation({
+            success: function (res) {
+              that.setData({
+                'address': res.address,
+              })
+            },
+            fail: function () {
+              // fail
+            },
+            complete: function () {
+              // complete
+            }
+          })
+        }
       }
     })
+   
   },
 
   report: function () {

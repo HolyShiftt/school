@@ -1,2 +1,45 @@
 <!--pages/person/person.wxml-->
-<text>我的</text>
+<view class="person">
+
+<view class="user-info-box">
+  <navigator class="user-info">
+    <view class="info-hd">
+      <image class="user-avatar" src="{{user.wx.avatarUrl}}"></image>
+      <view class="user-title">
+        <text class="user-name">{{user.wx.nickName}}</text>
+        <text class="user-id">未绑定</text>
+      </view>
+      <text class="bind-btn">前往绑定</text>
+      <view class="btn-open">
+        <image class="btn-enter" src="/icon/person/enter.png"></image>
+      </view>
+    </view>
+  </navigator>
+</view>
+
+<view class="more-list">
+  <navigator url="/pages/person/issues" class="issue-link">
+    <view class="more-btn">
+      <image class="btn-icon" src="/icon/person/issue.png"></image>
+      <text class="btn-text">反馈</text>
+      <view class="btn-open">
+        <image class="btn-enter" src="/icon/person/enter.png"></image>
+      </view>
+    </view>
+  </navigator>
+  <navigator url="about" class="about-link">
+    <view class="more-btn">
+      <image class="btn-icon" src="/icon/person/about.png"></image>
+      <text class="btn-text">关于</text>
+      <view class="btn-open">
+          <image class="btn-enter" src="/icon/person/enter.png"></image>
+      </view>
+    </view>
+  </navigator>
+</view>
+
+<navigator url="login" class="login-btn">
+  <text >退出登录</text>
+</navigator>
+
+</view>
