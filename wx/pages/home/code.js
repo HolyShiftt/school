@@ -1,29 +1,18 @@
-// pages/person/person.js
-var app = getApp();
+// pages/home/code.js
 Page({
+
+  /**
+   * 页面的初始数据
+   */
   data: {
-    username:wx.getStorageSync('username'),
-    img:''
+
   },
 
-  personInfo() {
-    var that = this;
-    wx.request({
-      url: 'http://127.0.0.1:8080/user/person',
-      data: {
-        username: wx.getStorageSync('username'),
-      },success: function (d) {
-        that.setData({
-          img: d.data.img,
-        })
-      }
-    })
-  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.personInfo()
+
   },
 
   /**

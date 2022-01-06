@@ -22,7 +22,7 @@ Page({
       login: function () {
         var username = this.data.phone
         wx.request({
-          url: 'http://127.0.0.1:8080/login',
+          url: 'http://127.0.0.1:8080/user/login',
           data: {
             username: this.data.phone,
             password: this.data.password

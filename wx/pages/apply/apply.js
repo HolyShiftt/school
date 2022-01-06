@@ -1,4 +1,4 @@
-// pages/date/date.js
+// pages/apply/apply.js
 Page({
 
   /**

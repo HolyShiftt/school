@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.List;
 
 @Controller
+@RequestMapping("/user")
 public class UserController {
 
     @Autowired
@@ -33,9 +34,9 @@ public class UserController {
     }
 
 
-    @RequestMapping("/userInfo")
+    @RequestMapping("/person")
     @ResponseBody
-    public User userInfo(String username){
+    public User person(String username){
         return userService.getUserByUsername(username);
     }
 

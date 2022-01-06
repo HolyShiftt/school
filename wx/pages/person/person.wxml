@@ -4,12 +4,12 @@
 <view class="user-info-box">
   <navigator class="user-info">
     <view class="info-hd">
-      <image class="user-avatar" src="{{user.wx.avatarUrl}}"></image>
+      <image class="user-avatar" src="{{img}}"></image>
       <view class="user-title">
-        <text class="user-name">{{user.wx.nickName}}</text>
-        <text class="user-id">未绑定</text>
+        <text class="user-name">{{username}}</text>
+        <text class="user-id">{{}}</text>
       </view>
-      <text class="bind-btn">前往绑定</text>
+      <text class="bind-btn">个人信息</text>
       <view class="btn-open">
         <image class="btn-enter" src="/icon/person/enter.png"></image>
       </view>

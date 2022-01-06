@@ -15,6 +15,7 @@ Page({
     })
   },
 
+
   getA: function() {
     wx.request({
       url: 'http://127.0.0.1:8080/',

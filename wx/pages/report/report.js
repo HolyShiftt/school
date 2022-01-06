@@ -8,34 +8,28 @@ Page({
   data: {
     address: "",
     time: '',
-    isNormal:'',
-    username:wx.getStorageSync('username')
+    isNormal: '',
+    username: wx.getStorageSync('username')
   },
-  
+
   chooseLocation: function () {
-    wx.getSetting({
-      success (res) {
-        if(!res.authSetting.address){
-          wx.openSetting({})
-        }else{
-          var that = this;
-          wx.chooseLocation({
-            success: function (res) {
-              that.setData({
-                'address': res.address,
-              })
-            },
-            fail: function () {
-              // fail
-            },
-            complete: function () {
-              // complete
-            }
-          })
-        }
-      }
+    var that = this;
+    wx.chooseLocation({
+      success: function (res) {
+        that.setData({
+          'address': res.address,
+        })
+      },
+      fail: function () {
+        wx.showToast({
+          title: "请获取当前地理位置",
+          icon: 'error',
+          success:function () {
+            wx.authorize({scope: 'scope.userLocation'})
+          }
+        })
+      },
     })
-   
   },
 
   report: function () {
@@ -51,8 +45,7 @@ Page({
           wx.showToast({
             title: d.data,
             icon: 'success',
-            success: function () {
-            }
+            success: function () {}
           })
         } else {
           wx.showToast({
@@ -68,7 +61,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-   
+
   },
 
   /**
@@ -77,7 +70,7 @@ Page({
   onReady: function () {
     var TIME = util.formatTime(new Date());
     this.setData({
-    time: TIME,
+      time: TIME,
     });
   },
 

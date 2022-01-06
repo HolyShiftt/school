@@ -3,13 +3,14 @@
     "pages/home/home",
     "pages/report/report",
     "pages/service/service",
-    "pages/date/date",
+    "pages/apply/apply",
     "pages/person/person",
     "pages/index/index",
     "pages/logs/logs",
     "pages/schoolWeb/schoolWeb",
     "pages/login/login",
-    "pages/person/issues"
+    "pages/person/issues",
+    "pages/home/code"
   ],
   "window": {
     "backgroundTextStyle": "dark",
@@ -37,8 +38,8 @@
       "iconPath": "/icon/_report.png",
       "selectedIconPath":"/icon/report.png"
       },{
-      "pagePath": "pages/date/date",
-      "text": "日程",
+      "pagePath": "pages/apply/apply",
+      "text": "申请",
       "iconPath": "/icon/_date.png",
       "selectedIconPath":"/icon/date.png"
       },{
@@ -50,7 +51,14 @@
       }
   ]
 },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "申请访问您的地址"
+    }
+  },
   "style": "v2",
   "sitemapLocation": "sitemap.json",
   "lazyCodeLoading": "requiredComponents"
+
 }
+

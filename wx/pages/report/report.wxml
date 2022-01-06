@@ -5,7 +5,7 @@
       <h2 class="weui-form__title">每日健康上报</h2>
     </view>
     <view class="weui-form__text-area" style="margin-top: 10px;">
-      <h2 style="float: left;">211806336</h2>
+      <h2 style="float: left;">211806xxx</h2>
       <h2 style="float: right;">{{username}}</h2>
     </view>
     <view class="weui-form__control-area" style="margin-top: 20px;margin-bottom: 0;">
