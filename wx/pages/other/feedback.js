@@ -1,32 +1,18 @@
-// pages/home/home.js
+// pages/other/feedback.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
-  },
-
-  goSchoolPage: function () {
-    wx.navigateTo({
-      url: '../schoolWeb/schoolWeb',
-      success: function () {}, //成功后的回调；
-    })
-  },
-
-  goFeedback: function () {
-    wx.navigateTo({
-      url: '../other/feedback',
-      success: function () {}, //成功后的回调；
-    })
+    feedbackList:'',
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+
   },
 
   /**
@@ -40,11 +26,23 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    if(!wx.getStorageSync("username")){
-      wx.navigateTo({
-        url: '../login/login'
-      })
-    }
+    var that = this;
+    wx.request({
+      url: 'http://127.0.0.1:8080/other/feedbackList',
+      data: {
+        id:wx.getStorageSync('id')
+      },
+      success: function (d) {
+        for (const iterator of d.data.data) {
+          if(!iterator.reply){
+            iterator.reply = "暂无"
+          }
+        }
+        that.setData({
+          feedbackList: d.data.data
+        })
+      }
+    })
   },
 
   /**

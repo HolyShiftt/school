@@ -1,13 +1,13 @@
 Page({
       data: {
-        phone: '',
+        username: '',
         password: ''
       },
 
       // 获取输入账号 
-      phoneInput: function (e) {
+      usernameInput: function (e) {
         this.setData({
-          phone: e.detail.value
+          username: e.detail.value
         })
       },
 
@@ -20,17 +20,18 @@ Page({
 
       // 登录 
       login: function () {
-        var username = this.data.phone
+        var username = this.data.username
         wx.request({
           url: 'http://127.0.0.1:8080/user/login',
           data: {
-            username: this.data.phone,
+            username: this.data.username,
             password: this.data.password
           },
           success: function (d) {
             if (d.data != "登录失败") {
               wx.setStorageSync("username",username);
-              wx.setStorageSync("stuId",d.data);
+              wx.setStorageSync("stuId",d.data.data.stu_id);
+              wx.setStorageSync("id",d.data.data.id);
               wx.showToast({
                 title: "登录成功",
                 icon: 'success',

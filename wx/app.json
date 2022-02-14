@@ -10,7 +10,8 @@
     "pages/schoolWeb/schoolWeb",
     "pages/login/login",
     "pages/person/issues",
-    "pages/home/code"
+    "pages/home/code",
+    "pages/other/feedback"
   ],
   "window": {
     "backgroundTextStyle": "dark",
@@ -23,34 +24,38 @@
     "selectedColor": "#FF8966",
     "list": [
       {
-      "pagePath": "pages/home/home",
-      "text": "首页",
-      "iconPath": "/icon/_home.png",
-      "selectedIconPath":"/icon/home.png"
-      },{
-      "pagePath": "pages/home/code",
-      "text": "二维码",
-      "iconPath": "/icon/_code.png",
-      "selectedIconPath":"/icon/code.png"
-      },{
-      "pagePath": "pages/report/report",
-      "text": "日报",
-      "iconPath": "/icon/_report.png",
-      "selectedIconPath":"/icon/report.png"
-      },{
-      "pagePath": "pages/apply/apply",
-      "text": "申请",
-      "iconPath": "/icon/_date.png",
-      "selectedIconPath":"/icon/date.png"
-      },{
-      "pagePath": "pages/person/person",
-      "text": "我的",
-      "selectedColor": "#FF8966",
-      "iconPath": "/icon/_person.png",
-      "selectedIconPath":"/icon/person.png"
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "/icon/_home.png",
+        "selectedIconPath": "/icon/home.png"
+      },
+      {
+        "pagePath": "pages/home/code",
+        "text": "二维码",
+        "iconPath": "/icon/_code.png",
+        "selectedIconPath": "/icon/code.png"
+      },
+      {
+        "pagePath": "pages/report/report",
+        "text": "日报",
+        "iconPath": "/icon/_report.png",
+        "selectedIconPath": "/icon/report.png"
+      },
+      {
+        "pagePath": "pages/apply/apply",
+        "text": "申请",
+        "iconPath": "/icon/_date.png",
+        "selectedIconPath": "/icon/date.png"
+      },
+      {
+        "pagePath": "pages/person/person",
+        "text": "我的",
+        "selectedColor": "#FF8966",
+        "iconPath": "/icon/_person.png",
+        "selectedIconPath": "/icon/person.png"
       }
-  ]
-},
+    ]
+  },
   "permission": {
     "scope.userLocation": {
       "desc": "申请访问您的地址"
@@ -59,6 +64,4 @@
   "style": "v2",
   "sitemapLocation": "sitemap.json",
   "lazyCodeLoading": "requiredComponents"
-
 }
-

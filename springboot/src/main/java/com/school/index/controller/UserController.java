@@ -1,5 +1,6 @@
 package com.school.index.controller;
 
+import com.school.index.pojo.Res;
 import com.school.index.pojo.User;
 import com.school.index.service.UserService;
 import jdk.nashorn.internal.runtime.logging.Logger;
@@ -19,16 +20,16 @@ public class UserController {
 
     @RequestMapping("/login")
     @ResponseBody
-    public String login(String username, String password){
+    public Res login(String username, String password){
         User user = userService.getUserByUsername(username);
         if (user!=null){
             if (user.getPassword().equals(password)){
-                return user.getStu_id();
+                return Res.success(user);
             }else {
-                return "密码错误";
+                return Res.error("密码错误");
             }
         }else{
-            return "该用户名不存在";
+            return Res.error("该用户名不存在");
         }
 
     }

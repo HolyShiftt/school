@@ -1,8 +1,8 @@
 <!--issues.wxml-->
 <view class="perason">
   <view class="issues-panel">
-    <input class="issues-input" placeholder="请输入反馈标题" bindinput="listenerTitle" />
-    <textarea class="issues-textarea" placeholder="请输入反馈内容" bindblur="listenerTextarea" auto-height></textarea>
+    <input class="issues-input" placeholder="请输入反馈标题" bindinput="titleInput" />
+    <textarea class="issues-textarea" placeholder="请输入反馈内容" bindinput="contentInput" auto-height></textarea>
   </view>
   <view class="submit-btn" bindtap="submit">
     <text>提交反馈</text>

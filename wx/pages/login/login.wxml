@@ -9,7 +9,7 @@
  <view class="inputView"> 
  <image class="nameImage" src="../../icon/username.png"></image> 
  <label class="loginLab">账号</label> 
- <input class="inputText" placeholder="请输入账号" bindinput="phoneInput" /> 
+ <input class="inputText" placeholder="请输入账号" bindinput="usernameInput" /> 
  </view> 
  <view class="line"></view> 
   

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.school.index.dao.OtherDao">
+
+    <insert id="subFeedback">
+        insert into feedback (title, content, time, user_id) values
+        (#{title},#{content},#{time},#{id})
+    </insert>
+    <select id="feedbackList" resultType="com.school.index.pojo.Feedback">
+        select * from feedback where user_id = #{id}
+    </select>
+</mapper>

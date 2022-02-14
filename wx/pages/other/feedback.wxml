@@ -1,0 +1,9 @@
+<!--pages/other/feedback.wxml-->
+<view class="perason">
+  <h2 class="weui-form__title" style="text-align: center;padding-top: 20px;">我的反馈</h2>
+  <view class="issues-panel" wx:for="{{feedbackList}}">
+    <view class="issues-input" bindinput="titleInput" disabled="true">标题：{{item.title}}</view>
+    <textarea class="issues-textarea" bindinput="contentInput" auto-height disabled="true">内容：{{item.content}}</textarea>
+    <view class="issues-input" bindinput="titleInput" disabled="true">管理员回复：{{item.reply}}</view>
+  </view>
+</view>
