@@ -1,8 +1,13 @@
-// pages/person/person.js
-var app = getApp();
+// pages/person/info.js
 Page({
+
+  /**
+   * 页面的初始数据
+   */
   data: {
+    id:wx.getStorageSync('id'),
     name:wx.getStorageSync('name'),
+    stuId:wx.getStorageSync('stuId'),
     img:''
   },
 
@@ -21,26 +26,50 @@ Page({
     })
   },
 
-  quit: function () {
-    wx.showModal({
-      title: '提示',
-      content: '你确定要退出吗',
-      success: function (res) {
-        if (res.confirm) {
-          wx.clearStorageSync()
-          wx.navigateTo({
-            url: '../login/login'
-          })
+  uploadImg: function () {
+    var that = this;
+    wx.chooseImage({
+      count: 1,
+      sizeType: 'compressed',
+      sourceType: ['album', 'camera'],
+      success (res) {
+        let imgbase64 = 'data:image/png;base64,' + wx.getFileSystemManager().readFileSync(res.tempFilePaths[0], "base64")
+        that.setData({
+          img: imgbase64,
+        })
+      }
+    })
+  },
+
+  update: function () {
+    wx.request({
+      url: 'http://127.0.0.1:8080/user/updateImg',
+      data: {
+        id: this.data.id,
+        img: this.data.img
+      },success: function (d) {
+        if (d.data != "修改失败") {
           wx.showToast({
-            title: '退出登录成功',
+            title: d.data,
             icon: 'success',
-            duration: 1000
+            duration: 2000,
+            success: function () {
+              setTimeout(function() {
+                wx.switchTab({
+                  url: '../person/person'
+                })
+             }, 2000);
+            }
           })
         } else {
+          wx.showToast({
+            title: d.data,
+            icon: 'error',
+            duration: 2000
+          })
         }
       }
     })
-    
   },
 
   /**
@@ -54,14 +83,14 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    this.personInfo()
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.personInfo()
+    
   },
 
   /**

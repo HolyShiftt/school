@@ -1,0 +1,24 @@
+<!--pages/person/info.wxml-->
+<view class="person">
+
+<view class="more-list">
+  <view class="more-btn" style="margin-top: 20px;" bindtap="uploadImg">
+      <text class="btn-text">头像</text>
+      <view class="btn-open">
+        <image class="user-avatar" src="{{img}}" style="margin-right: 10px;"></image>
+        <image class="btn-enter" src="/icon/person/enter.png"></image>
+      </view>
+    </view>
+    <view class="more-btn">
+      <text class="btn-text">姓名</text>
+      <view class="btn-open">{{name}}</view>
+    </view>
+    <view class="more-btn">
+      <text class="btn-text">学号</text>
+      <view class="btn-open">{{stuId}}</view>
+    </view>
+</view>
+<navigator bindtap='update' class="login-btn" url="none">
+  <text >提交修改</text>
+</navigator>
+</view>

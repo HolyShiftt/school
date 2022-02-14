@@ -14,4 +14,14 @@ public class UserServiceImpl implements UserService {
     public User getUserByUsername(String username) {
         return userDao.getUserByUsername(username);
     }
+
+    @Override
+    public int updateImg(Integer id, String img) {
+        return userDao.updateImg(id,img);
+    }
+
+    @Override
+    public int updPwd(String username, String pwd2) {
+        return userDao.updPwd(username, pwd2);
+    }
 }

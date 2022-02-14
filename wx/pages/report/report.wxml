@@ -6,7 +6,7 @@
     </view>
     <view class="weui-form__text-area" style="margin-top: 10px;">
       <h2 style="float: left;">{{stuId}}</h2>
-      <h2 style="float: right;">{{username}}</h2>
+      <h2 style="float: right;">{{name}}</h2>
     </view>
     <view class="weui-form__control-area" style="margin-top: 20px;margin-bottom: 0;">
       <view class="weui-cells__group weui-cells__group_form">

@@ -1,5 +1,6 @@
 server:
   port: 8080
+  max-http-header-size: 102400
 
 spring:
   datasource:
@@ -10,3 +11,4 @@ spring:
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml
+

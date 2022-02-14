@@ -1,14 +1,11 @@
-/**more.wxss**/
+/* pages/person/info.wxss */
 .person{
-  background-color: #f6f6f6;
   padding: 0;
 }
 .user-info, .more-btn {
   display: flex;
-  background-color: #fff;
   min-height: 85rpx;
-  border-top: 1px solid #e5e5e5;
-  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 20rpx;
 }
 /**user-info**/
 .user-info-box{

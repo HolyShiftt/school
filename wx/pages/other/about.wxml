@@ -1,0 +1,2 @@
+<!--pages/other/about.wxml-->
+<image src="../../img/about.png" class='imagesize'> </image>

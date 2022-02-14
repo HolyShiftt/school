@@ -34,11 +34,31 @@ public class UserController {
 
     }
 
-
     @RequestMapping("/person")
     @ResponseBody
     public User person(String username){
         return userService.getUserByUsername(username);
     }
 
+    @RequestMapping("/updateImg")
+    @ResponseBody
+    public String updateImg(Integer id,String img){
+        if (userService.updateImg(id,img) != 0){
+            return "修改成功";
+        }else{
+            return "修改失败";
+        }
+    }
+
+    @RequestMapping("/updPwd")
+    @ResponseBody
+    public String updPwd(String username,String pwd1,String pwd2){
+        User user = userService.getUserByUsername(username);
+        if (user.getPassword().equals(pwd1)){
+            userService.updPwd(username, pwd2);
+            return "请重新登录";
+        }else {
+            return "原密码错误";
+        }
+    }
 }

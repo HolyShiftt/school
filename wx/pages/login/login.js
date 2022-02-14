@@ -32,6 +32,7 @@ Page({
               wx.setStorageSync("username",username);
               wx.setStorageSync("stuId",d.data.data.stu_id);
               wx.setStorageSync("id",d.data.data.id);
+              wx.setStorageSync("name",d.data.data.name);
               wx.showToast({
                 title: "登录成功",
                 icon: 'success',

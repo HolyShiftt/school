@@ -11,7 +11,10 @@
     "pages/login/login",
     "pages/person/issues",
     "pages/home/code",
-    "pages/other/feedback"
+    "pages/other/feedback",
+    "pages/other/about",
+    "pages/person/info",
+    "pages/other/password"
   ],
   "window": {
     "backgroundTextStyle": "dark",

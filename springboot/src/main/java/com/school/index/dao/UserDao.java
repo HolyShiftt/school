@@ -11,4 +11,8 @@ public interface UserDao {
     List<User> selectAll();
 
     User getUserByUsername(String username);
+
+    int updateImg(Integer id,String img);
+
+    int updPwd(String username, String pwd2);
 }

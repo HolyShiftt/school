@@ -9,7 +9,7 @@ Page({
     address: "",
     time: '',
     isNormal: '',
-    username: '',
+    name: '',
     stuId: ''
   },
 
@@ -79,7 +79,7 @@ Page({
     var TIME = util.formatTime(new Date());
     this.setData({
       time: TIME,
-      username: wx.getStorageSync('username'),
+      name: wx.getStorageSync('name'),
       stuId: wx.getStorageSync('stuId')
     });
   },

@@ -1,7 +1,6 @@
 package com.school.index.controller;
 
 import com.school.index.pojo.Res;
-import com.school.index.pojo.User;
 import com.school.index.service.OtherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,7 +22,6 @@ public class OtherController {
         }else{
             return "提交失败";
         }
-
     }
 
     @RequestMapping("/feedbackList")

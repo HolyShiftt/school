@@ -2,11 +2,11 @@
 <view class="person">
 
 <view class="user-info-box">
-  <navigator class="user-info">
+  <navigator url="/pages/person/info" class="user-info">
     <view class="info-hd">
       <image class="user-avatar" src="{{img}}"></image>
       <view class="user-title">
-        <text class="user-name">{{username}}</text>
+        <text class="user-name">{{name}}</text>
         <text class="user-id">{{}}</text>
       </view>
       <text class="bind-btn">个人信息</text>
@@ -18,6 +18,15 @@
 </view>
 
 <view class="more-list">
+  <navigator url="/pages/other/password" class="issue-link">
+    <view class="more-btn">
+      <image class="btn-icon" src="/icon/person/password.png"></image>
+      <text class="btn-text">修改密码</text>
+      <view class="btn-open">
+        <image class="btn-enter" src="/icon/person/enter.png"></image>
+      </view>
+    </view>
+  </navigator>
   <navigator url="/pages/person/issues" class="issue-link">
     <view class="more-btn">
       <image class="btn-icon" src="/icon/person/issue.png"></image>
@@ -27,7 +36,7 @@
       </view>
     </view>
   </navigator>
-  <navigator url="about" class="about-link">
+  <navigator url="/pages/other/about" class="about-link">
     <view class="more-btn">
       <image class="btn-icon" src="/icon/person/about.png"></image>
       <text class="btn-text">关于</text>
