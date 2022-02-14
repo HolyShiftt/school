@@ -15,15 +15,39 @@ Page({
       },success: function (d) {
         that.setData({
           img: d.data.img,
+          username: wx.getStorageSync('username'),
         })
       }
     })
   },
+
+  quit: function () {
+    wx.showModal({
+      title: '提示',
+      content: '你确定要退出吗',
+      success: function (res) {
+        if (res.confirm) {
+          wx.clearStorageSync()
+          wx.navigateTo({
+            url: '../login/login'
+          })
+          wx.showToast({
+            title: '退出登录成功',
+            icon: 'success',
+            duration: 1000
+          })
+        } else {
+        }
+      }
+    })
+    
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.personInfo()
+    
   },
 
   /**
@@ -37,7 +61,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.personInfo()
   },
 
   /**

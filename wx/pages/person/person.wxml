@@ -38,7 +38,7 @@
   </navigator>
 </view>
 
-<navigator url="login" class="login-btn">
+<navigator bindtap='quit' class="login-btn" url="none">
   <text >退出登录</text>
 </navigator>
 

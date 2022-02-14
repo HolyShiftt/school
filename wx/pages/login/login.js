@@ -28,10 +28,11 @@ Page({
             password: this.data.password
           },
           success: function (d) {
-            if (d.data == "登录成功") {
+            if (d.data != "登录失败") {
               wx.setStorageSync("username",username);
+              wx.setStorageSync("stuId",d.data);
               wx.showToast({
-                title: d.data,
+                title: "登录成功",
                 icon: 'success',
                 success: function () {
                   wx.switchTab({

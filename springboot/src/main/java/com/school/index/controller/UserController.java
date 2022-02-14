@@ -23,7 +23,7 @@ public class UserController {
         User user = userService.getUserByUsername(username);
         if (user!=null){
             if (user.getPassword().equals(password)){
-                return "登录成功";
+                return user.getStu_id();
             }else {
                 return "密码错误";
             }
