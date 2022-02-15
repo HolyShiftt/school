@@ -8,4 +8,7 @@
         (stu_id,issue,transport,place,start_time,end_time,state) values
         (#{stu_id},#{issue},#{transport},#{place},#{start_time},#{end_time},0)
     </insert>
+    <select id="lastApply" resultType="java.lang.Integer">
+        select * from apply where stu_id = #{id} and state = 0 limit 1
+    </select>
 </mapper>

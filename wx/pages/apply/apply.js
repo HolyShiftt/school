@@ -46,7 +46,25 @@ Page({
       date2: data.dateTimeArray2[0][data.dateTime2[0]] + "-" + data.dateTimeArray2[1][data.dateTime2[1]] + "-" +
         data.dateTimeArray2[2][data.dateTime2[2]] + " " + data.dateTimeArray2[3][data.dateTime2[3]] + ":" + data.dateTimeArray2[4][data.dateTime2[4]]
     })
-    if (data.dateTime1[0] <= data.dateTime2[0]) {
+    if(data.issue==''){
+      wx.showToast({
+        title: '请填写请假事由',
+        icon: 'none',
+        duration: 2000
+      })
+    }else if(data.transport==''){
+      wx.showToast({
+        title: '请填写交通方式',
+        icon: 'none',
+        duration: 2000
+      })
+    }else if(data.place==''){
+      wx.showToast({
+        title: '请填写目的地',
+        icon: 'none',
+        duration: 2000
+      })
+    }else if (data.dateTime1[0] <= data.dateTime2[0]) {
       if (data.dateTime1[1] > data.dateTime2[1] || (data.dateTime1[1] <= data.dateTime2[1] && data.dateTime1[2] > data.dateTime2[2])) {
         wx.showToast({
           title: '结束日期不能早于开始日期',
@@ -98,7 +116,7 @@ Page({
         } else {
           wx.showToast({
             title: d.data,
-            icon: 'error',
+            icon: 'none',
             duration: 2000
           })
         }

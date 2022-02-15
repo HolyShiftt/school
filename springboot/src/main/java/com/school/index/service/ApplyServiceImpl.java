@@ -12,7 +12,13 @@ public class ApplyServiceImpl implements ApplyService {
     private ApplyDao applyDao;
 
     @Override
-    public int applySub(Apply apply) {
-        return applyDao.applySub(apply);
+    public String applySub(Apply apply) {
+        if (applyDao.lastApply(apply.getStu_id())==0){
+            applyDao.applySub(apply);
+            return "申请成功";
+        }else {
+            return "您还有未审批的申请，不能重复申请";
+        }
+
     }
 }

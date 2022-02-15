@@ -17,12 +17,7 @@ public class ApplyController {
     @RequestMapping("/applySub")
     @ResponseBody
     public String applySub(Apply apply) {
-        try {
-            applyService.applySub(apply);
-            return "申请成功";
-        } catch (Exception e) {
-            return "申请失败";
-        }
+        return applyService.applySub(apply);
     }
 
 }
