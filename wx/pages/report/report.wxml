@@ -8,15 +8,17 @@
       <h2 style="float: left;">{{stuId}}</h2>
       <h2 style="float: right;">{{name}}</h2>
     </view>
-    <view class="weui-form__control-area" style="margin-top: 20px;margin-bottom: 0;">
+    <view class="weui-form__text-area" style="margin-top: 20px;">
+      <h2 style="float: right;color: royalblue;text-decoration:underline;" bindtap="myreport">历史填报记录</h2>
+    </view>
+    <view class="weui-form__control-area" style="margin-top: 10px;margin-bottom: 0;">
       <view class="weui-cells__group weui-cells__group_form">
 
         <view class="weui-cells__title">1.目前所在位置</view>
         <view class="weui-cell weui-cell_active">
           <view class="weui-cell__hd"><label class="weui-label">地址</label></view>
-          <view class="weui-cell__bd"  bindtap="chooseLocation">
-            <input class="weui-input" placeholder="点击获取当前位置" placeholder-class="weui-input__placeholder"
-              value="{{address}}" disabled="true" />
+          <view class="weui-cell__bd" bindtap="chooseLocation">
+            <input class="weui-input" placeholder="点击获取当前位置" placeholder-class="weui-input__placeholder" value="{{address}}" disabled="true" />
           </view>
         </view>
 
@@ -24,63 +26,43 @@
         <view class="weui-cell weui-cell_active">
           <view class="weui-cell__hd"><label class="weui-label">时间</label></view>
           <view class="weui-cell__bd" bindtap="">
-            <input class="weui-input" placeholder="填报时间" placeholder-class="weui-input__placeholder" disabled="true"
-              value="{{time}}" />
+            <input class="weui-input" placeholder="填报时间" placeholder-class="weui-input__placeholder" disabled="true" value="{{time}}" />
           </view>
         </view>
 
         <view class="weui-cells__title">3.今日体温是否正常？（体温小于37.3度为正常）</view>
-        <radio-group class="weui-cell weui-cell_active" style="display: flex;text-align: center;">
-          <label class="radio" style="width: 50%;">
-            <radio value="{{isNormal==1}}" checked="true"/>正常
-          </label>
-          <label class="radio" style="width: 50%;">
-            <radio value="{{isNormal==2}}" />发热
+        <radio-group class="weui-cell weui-cell_active" style="display: flex;text-align: center;" bindchange="radioChange1">
+          <label class="radio" wx:for="{{radio1}}" style="margin-right: 60px;">
+            <radio value="{{item.value}}" checked="{{item.checked}}" />{{item.value}}
           </label>
         </radio-group>
         <view class="weui-cell" hidden="true">
           <view class="weui-cell__hd"><label class="weui-label">体温</label></view>
           <view class="weui-cell__bd">
-            <input class="weui-input" placeholder="填报时间" placeholder-class="weui-input__placeholder"/>
+            <input class="weui-input" placeholder="填报时间" placeholder-class="weui-input__placeholder" />
           </view>
         </view>
 
         <view class="weui-cells__title">4.昨日午检体温</view>
         <view class="weui-cell weui-cell_active">
-          <input class="weui-input" placeholder="昨日午检体温" placeholder-class="weui-input__placeholder" value="36.2"/>
+          <input class="weui-input" placeholder="昨日午检体温" placeholder-class="weui-input__placeholder" value="{{yes_noon_temp}}" />
         </view>
 
         <view class="weui-cells__title">5.昨日晚检体温</view>
         <view class="weui-cell weui-cell_active">
-          <input class="weui-input" placeholder="昨日晚检体温" placeholder-class="weui-input__placeholder" value="36.4"/>
+          <input class="weui-input" placeholder="昨日晚检体温" placeholder-class="weui-input__placeholder" value="{{yes_night_temp}}" />
         </view>
 
         <view class="weui-cells__title">6.今日晨检体温</view>
         <view class="weui-cell weui-cell_active">
-          <input class="weui-input" placeholder="今日晨检体温" placeholder-class="weui-input__placeholder" value="36.2"/>
+          <input class="weui-input" placeholder="今日晨检体温" placeholder-class="weui-input__placeholder" value="{{today_morning_temp}}" />
         </view>
 
-        <view class="weui-cells__title">7.今日健康状况</view>
-        <view class="weui-cell weui-cell_active">
-          <input class="weui-input" placeholder="昨日晚检体温" placeholder-class="weui-input__placeholder" value=""/>
-        </view>
-
-        <view class="weui-cells__title">9.今日隔离情况</view>
+        <view class="weui-cells__title">7.今日隔离情况</view>
         <radio-group class="weui-cell weui-cell_active" style="display: block;">
-          <view style="display: flex;text-align: center;">
-            <label class="radio" style="width: 50%;">
-              <radio value="1" checked="true" />无需隔离
-            </label>
-            <label class="radio" style="width: 50%;">
-              <radio value="2" />居家隔离
-            </label>
-          </view>
-          <view style="display: flex;text-align: center;margin-top: 30px;">
-            <label class="radio" style="width: 50%;">
-              <radio value="3" />集中隔离
-            </label>
-            <label class="radio" style="width: 50%;">
-              <radio value="4" />入院隔离
+          <view style="text-align: center;">
+            <label class="radio" wx:for="{{radio2}}" style="margin-right:60px;">
+              <radio value="{{item.value}}" checked="{{item.checked}}"style="margin-bottom: 10px;" />{{item.value}}
             </label>
           </view>
         </radio-group>

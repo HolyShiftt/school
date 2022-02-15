@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.school.index.dao.ReportDao">
+
+    <insert id="doReport">
+        insert into report
+        (user_id,name,address,time,normal,yes_noon_temp,yes_night_temp,
+        today_morning_temp,isolation)
+        values
+        (#{user_id},#{name},#{address},#{time},#{normal},#{yes_noon_temp},
+        #{yes_night_temp},#{today_morning_temp},#{isolation})
+    </insert>
+    <select id="myReport" resultType="com.school.index.pojo.Report">
+        select name,time,normal,address from report where user_id = #{id} order by time
+    </select>
+</mapper>
