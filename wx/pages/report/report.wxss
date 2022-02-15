@@ -1,4 +1,4 @@
 /* pages/report/report.wxss */
 .page{height:100%}.weui-label{width:4.1em}
-.weui-cells__title{font-size: 18px;}
+.weui-cells__title{font-size: 17px;}
 .form9{padding:10px 0 0 0 !important;display: flex;}

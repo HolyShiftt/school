@@ -8,38 +8,66 @@
       <view class="weui-cells__group weui-cells__group_form">
         <view class="weui-cells__title">请假事由</view>
         <view class="weui-cell weui-cell_active">
-          <view class="weui-cell__bd"  bindtap="chooseLocation">
-            <input class="weui-input"placeholder-class="weui-input__placeholder"/>
+          <view class="weui-cell__bd">
+            <input class="weui-input" placeholder-class="weui-input__placeholder" bindinput='issue' />
           </view>
         </view>
         <view class="weui-cells__title">交通方式</view>
         <view class="weui-cell weui-cell_active">
-          <view class="weui-cell__bd"  bindtap="chooseLocation">
-            <input class="weui-input"placeholder-class="weui-input__placeholder"/>
+          <view class="weui-cell__bd" bindtap="chooseTransport">
+            <view class="weui-input" placeholder-class="weui-input__placeholder">{{transport}}</view>
           </view>
         </view>
-        <view class="weui-cells__title">出行范围</view>
+        <view class="weui-cells__title">目的地</view>
         <view class="weui-cell weui-cell_active">
-          <view class="weui-cell__bd"  bindtap="chooseLocation">
-            <input class="weui-input"placeholder-class="weui-input__placeholder"/>
+          <view class="weui-cell__bd">
+            <input class="weui-input" placeholder-class="weui-input__placeholder" bindinput='place' />
           </view>
         </view>
         <view class="weui-cells__title">开始时间</view>
         <view class="weui-cell weui-cell_active">
-          <view class="weui-cell__bd"  bindtap="chooseLocation">
-            <input class="weui-input"placeholder-class="weui-input__placeholder"/>
+          <view class="weui-cell__bd">
+            <view class="weui-input" placeholder-class="weui-input__placeholder">
+              <picker mode="multiSelector" value="{{dateTime1}}" bindchange="changeDateTime1" bindcolumnchange="changeDateTimeColumn1" range="{{dateTimeArray1}}">
+                <view class="tui-picker-detail">
+                  {{dateTimeArray1[0][dateTime1[0]]}}-{{dateTimeArray1[1][dateTime1[1]]}}-{{dateTimeArray1[2][dateTime1[2]]}} {{dateTimeArray1[3][dateTime1[3]]}}:{{dateTimeArray1[4][dateTime1[4]]}}
+                </view>
+              </picker>
+            </view>
           </view>
         </view>
         <view class="weui-cells__title">结束时间</view>
         <view class="weui-cell weui-cell_active">
-          <view class="weui-cell__bd"  bindtap="chooseLocation">
-            <input class="weui-input"placeholder-class="weui-input__placeholder"/>
+          <view class="weui-cell__bd">
+            <view class="weui-input" placeholder-class="weui-input__placeholder">
+              <picker mode="multiSelector" value="{{dateTime2}}" bindchange="changeDateTime2" bindcolumnchange="changeDateTimeColumn2" range="{{dateTimeArray2}}">
+                <view class="tui-picker-detail" bindtap='date2'>
+                  {{dateTimeArray2[0][dateTime2[0]]}}-{{dateTimeArray2[1][dateTime2[1]]}}-{{dateTimeArray2[2][dateTime2[2]]}} {{dateTimeArray2[3][dateTime2[3]]}}:{{dateTimeArray2[4][dateTime2[4]]}}
+                </view>
+              </picker>
+            </view>
           </view>
         </view>
       </view>
     </view>
-    <view class="weui-form__opr-area">
-      <a aria-role="button" class="weui-btn weui-btn_primary" bindtap="report">提交申请</a>
+    <view class="weui-form__opr-area" style="margin-bottom: 0;">
+      <a aria-role="button" class="weui-btn weui-btn_primary" catchtap="report" style="margin-top: 50px;">提交申请</a>
+    </view>
+  </view>
+</view>
+<view class='maskWindow' wx:if="{{isMaskWindowShow}}" catchtap='maskWindowBgClick' catchtouchmove='move'>
+  <view class='maskWindowContent' catchtap='clickTap'>
+    <text class="maskWindowTitleText">{{typeTitle}}</text>
+    <view class='maskWindowList' wx:for='{{maskWindowList}}' wx:for-index='index' wx:if='{{index%2===0}}'>
+      <view class="maskWindowText {{index == selectIndex? 'maskWindowText_selected' : 'maskWindowText_unselected'}}" catchtap='maskWindowTableSelect' data-window-Index='{{index}}'>{{maskWindowList[index]}}</view>
+      <view class="maskWindowText {{index + 1 == selectIndex? 'maskWindowText_selected' : 'maskWindowText_unselected'}}" catchtap='maskWindowTableSelect' data-window-Index='{{index+1}}'>{{maskWindowList[index+1]}}</view>
+    </view>
+    <view class='maskWindowInputView'>
+      <input class='maskWindowInput' maxlength='100' placeholder='请输入其他原因' hidden='{{!isMaskWindowInputShow}}' bindinput='maskWindowInput'></input>
+    </view>
+    <view class='maskWindowBtnView'>
+      <view class='maskWindowBtn' catchtap='maskWindowOk'>确定</view>
+      <view class='maskWindowBtn' catchtap='maskWindowCancel'>取消</view>
     </view>
   </view>
 </view>
