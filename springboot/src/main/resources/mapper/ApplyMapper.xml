@@ -5,8 +5,8 @@
 
     <insert id="applySub">
         insert into apply
-        (stu_id,issue,transport,place,start_time,end_time,state) values
-        (#{stu_id},#{issue},#{transport},#{place},#{start_time},#{end_time},0)
+        (stu_id,issue,transport,place,start_time,end_time,state,create_time) values
+        (#{stu_id},#{issue},#{transport},#{place},#{start_time},#{end_time},0,#{create_time})
     </insert>
     <select id="lastApply" resultType="java.lang.Integer">
         select * from apply where stu_id = #{id} and state = 0 limit 1

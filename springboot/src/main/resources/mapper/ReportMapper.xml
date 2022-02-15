@@ -12,6 +12,7 @@
         #{yes_night_temp},#{today_morning_temp},#{isolation})
     </insert>
     <select id="myReport" resultType="com.school.index.pojo.Report">
-        select name,time,normal,address from report where user_id = #{id} order by time
+        select name,time,normal,address from report where user_id = #{id}
+        order by time desc
     </select>
 </mapper>

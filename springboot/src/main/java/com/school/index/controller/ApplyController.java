@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.Date;
+
 @Controller
 @RequestMapping("apply")
 public class ApplyController {
@@ -17,6 +19,7 @@ public class ApplyController {
     @RequestMapping("/applySub")
     @ResponseBody
     public String applySub(Apply apply) {
+        apply.setCreate_time(new Date().toString());
         return applyService.applySub(apply);
     }
 

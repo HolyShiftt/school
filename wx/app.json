@@ -15,7 +15,8 @@
     "pages/other/about",
     "pages/person/info",
     "pages/other/password",
-    "pages/report/myreport"
+    "pages/report/myreport",
+    "pages/apply/myapply"
   ],
   "window": {
     "backgroundTextStyle": "dark",
@@ -48,8 +49,8 @@
       {
         "pagePath": "pages/apply/apply",
         "text": "申请",
-        "iconPath": "/icon/_date.png",
-        "selectedIconPath": "/icon/date.png"
+        "iconPath": "/icon/_apply.png",
+        "selectedIconPath": "/icon/apply.png"
       },
       {
         "pagePath": "pages/person/person",

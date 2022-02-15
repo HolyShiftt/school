@@ -21,4 +21,5 @@ public class Apply {
 
     private Integer state;
 
+    private String create_time;
 }

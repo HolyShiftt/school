@@ -28,6 +28,12 @@ Page({
     })
   },
 
+  goApply: function () {
+    wx.navigateTo({
+      url: '../apply/myapply',
+      success: function () {}, //成功后的回调；
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
