@@ -10,6 +10,8 @@ public interface UserDao {
 
     List<User> selectAll();
 
+    User getUser(String username,String role);
+
     User getUserByUsername(String username);
 
     int updateImg(Integer id,String img);

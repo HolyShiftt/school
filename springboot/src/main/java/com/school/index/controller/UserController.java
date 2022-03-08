@@ -20,7 +20,7 @@ public class UserController {
 
     @RequestMapping("/login")
     @ResponseBody
-    public Res login(String username, String password){
+    public Res login(String username, String password,String role){
         User user = userService.getUserByUsername(username);
         if (user!=null){
             if (user.getPassword().equals(password)){

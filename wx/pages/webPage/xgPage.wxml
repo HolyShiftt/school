@@ -1,0 +1,2 @@
+<!--pages/webPage/xgPage.wxml-->
+<web-view src="https://news.qq.com//zt2020/page/feiyan.htm"></web-view>

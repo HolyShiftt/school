@@ -7,7 +7,7 @@
     "pages/person/person",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/schoolWeb/schoolWeb",
+    "pages/webPage/schoolWeb",
     "pages/login/login",
     "pages/person/issues",
     "pages/home/code",
@@ -16,7 +16,9 @@
     "pages/person/info",
     "pages/other/password",
     "pages/report/myreport",
-    "pages/apply/myapply"
+    "pages/apply/myapply",
+    "pages/visitor/visitor",
+    "pages/webPage/xgPage"
   ],
   "window": {
     "backgroundTextStyle": "dark",

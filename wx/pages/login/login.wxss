@@ -71,5 +71,6 @@ page{
    
  .loginBtn { 
   width: 80%; 
-  margin-top: 35px; 
+  margin-top: 10px; 
  }
+ 

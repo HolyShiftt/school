@@ -1,4 +1,4 @@
-// pages/home/home.js
+// pages/visitor/visitor.js
 Page({
 
   /**
@@ -8,37 +8,11 @@ Page({
 
   },
 
-  goWebPage: function (event) {
-    wx.navigateTo({
-      url: '../webPage/'+event.target.dataset.web,
-      success: function () {}, //成功后的回调；
-    })
-  },
-
-  goCode:function() {
-    wx.switchTab({
-      url: '../home/code'
-    })
-  },
-
-  goFeedback: function () {
-    wx.navigateTo({
-      url: '../other/feedback',
-      success: function () {}, //成功后的回调；
-    })
-  },
-
-  goApply: function () {
-    wx.navigateTo({
-      url: '../apply/myapply',
-      success: function () {}, //成功后的回调；
-    })
-  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+
   },
 
   /**
@@ -52,11 +26,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    if(!wx.getStorageSync("username")){
-      wx.navigateTo({
-        url: '../login/login'
-      })
-    }
+
   },
 
   /**

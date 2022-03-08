@@ -21,8 +21,11 @@
  </view> 
   
  <!--按钮-->
+ <view class="loginBtnView" style="margin-top: 30px;"> 
+ <button class="loginBtn" type="primary" bindtap="login">登录</button> 
+ </view> 
  <view class="loginBtnView"> 
- <button class="loginBtn" type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="login">登录</button> 
+ <button class="loginBtn" type="primary" bindtap="visitor">访客申请</button> 
  </view> 
  </view> 
 </view>

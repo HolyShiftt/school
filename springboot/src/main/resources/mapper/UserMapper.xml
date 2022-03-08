@@ -16,4 +16,7 @@
     <select id="getUserByUsername" resultType="com.school.index.pojo.User">
         select * from user where username = #{username}
     </select>
+    <select id="getUser" resultType="com.school.index.pojo.User">
+        select * from user where username = #{username} and role_id = #{role}
+    </select>
 </mapper>
