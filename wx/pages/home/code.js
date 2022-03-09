@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    green:true,
+    red:false,
   },
 
   /**
@@ -26,9 +27,28 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    if(wx.getStorageSync("state") == this.formatDate(new Date())){
+      this.setData({
+        green:true,
+        red:false
+      })
+    }else{
+      this.setData({
+        green:false,
+        red:true
+      })
+    }
   },
-
+  formatDate: function(date) {
+    let year = date.getFullYear()
+    let month = date.getMonth() + 1
+    month = month.toString()
+    month[1] ? month=month :month='0' + month
+    let day = date.getDate()
+    day = day.toString()
+    day[1] ? day=day : day='0' + day
+    return year+"-"+month+"-"+day
+   },
   /**
    * 生命周期函数--监听页面隐藏
    */

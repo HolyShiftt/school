@@ -1,0 +1,20 @@
+<!--pages/visitor/showMyVisitor.wxml-->
+<view class="container"> 
+ <view class="login-from"> 
+ <!--账号-->
+ <view class="inputView"> 
+  <image class="keyImage"></image> 
+ <input class="inputText" placeholder="请输入手机号进行查询" bindinput="phoneInput" /> 
+ </view> 
+  
+ <!--按钮-->
+ <view class="loginBtnView" style="margin-top: 30px;"> 
+ <button class="loginBtn" type="primary" bindtap="submit">查询</button> 
+ </view> 
+ <view style="text-align: center;margin-top: 20px;"><h1>{{msg}}</h1></view>
+ 
+ <image src="../../img/greenCode.png" style="margin-top: 30px;margin-left: 25px;" wx:if="{{greenCode}}"></image>
+ <image src="../../img/redCode.png" style="margin-top: 30px;margin-left: 15px;" wx:if="{{redCode}}"></image>
+ </view> 
+ 
+</view>

@@ -2,7 +2,6 @@
   "pages": [
     "pages/home/home",
     "pages/report/report",
-    "pages/service/service",
     "pages/apply/apply",
     "pages/person/person",
     "pages/index/index",
@@ -18,7 +17,8 @@
     "pages/report/myreport",
     "pages/apply/myapply",
     "pages/visitor/visitor",
-    "pages/webPage/xgPage"
+    "pages/webPage/xgPage",
+    "pages/visitor/showMyVisitor"
   ],
   "window": {
     "backgroundTextStyle": "dark",

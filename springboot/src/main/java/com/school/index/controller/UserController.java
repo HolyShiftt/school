@@ -3,13 +3,10 @@ package com.school.index.controller;
 import com.school.index.pojo.Res;
 import com.school.index.pojo.User;
 import com.school.index.service.UserService;
-import jdk.nashorn.internal.runtime.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-
-import java.util.List;
 
 @Controller
 @RequestMapping("/user")
@@ -20,7 +17,7 @@ public class UserController {
 
     @RequestMapping("/login")
     @ResponseBody
-    public Res login(String username, String password,String role){
+    public Res login(String username, String password){
         User user = userService.getUserByUsername(username);
         if (user!=null){
             if (user.getPassword().equals(password)){

@@ -3,38 +3,40 @@
   <view class="weui-form" style="padding:20px 0">
     <view class="weui-form__text-area">
       <h2 class="weui-form__title">访客入校申请</h2>
-      <a aria-role="button" class="weui-btn weui-btn_primary" catchtap="report" style="margin-top: 20px;">查看申请进度</a>
+      <a aria-role="button" class="weui-btn weui-btn_primary" bindtap="showMyVisitor" style="margin-top: 20px;">查看申请进度</a>
     </view>
     <view class="weui-form__control-area" style="margin-top: 50px;margin-bottom: 0;">
       <view class="weui-cells__group weui-cells__group_form">
         <view class="weui-cells__title">手机号码</view>
         <view class="weui-cell weui-cell_active">
           <view class="weui-cell__bd">
-            <input class="weui-input" placeholder-class="weui-input__placeholder" bindinput='issue' />
+            <input class="weui-input" placeholder-class="weui-input__placeholder" bindinput='phoneChange' />
           </view>
         </view>
-        <view class="weui-cells__title">申请事由</view>
-        <view class="weui-cell weui-cell_active">
-          <view class="weui-cell__bd" bindtap="chooseTransport">
-            <view class="weui-input" placeholder-class="weui-input__placeholder">{{transport}}</view>
-          </view>
-        </view>
-        <view class="weui-cells__title">3.目的地</view>
+        <view class="weui-cells__title">预约事由</view>
         <view class="weui-cell weui-cell_active">
           <view class="weui-cell__bd">
-            <input class="weui-input" placeholder-class="weui-input__placeholder" bindinput='place' />
+            <input class="weui-input" placeholder-class="weui-input__placeholder" bindinput='issueChange' />
           </view>
         </view>
-        <view class="weui-cells__title">4.开始时间</view>
+        <view class="weui-cells__title">受访人姓名</view>
         <view class="weui-cell weui-cell_active">
           <view class="weui-cell__bd">
-            <view class="weui-input" placeholder-class="weui-input__placeholder">
-              <picker mode="multiSelector" value="{{dateTime1}}" bindchange="changeDateTime1" bindcolumnchange="changeDateTimeColumn1" range="{{dateTimeArray1}}">
-                <view class="tui-picker-detail">
-                  {{dateTimeArray1[0][dateTime1[0]]}}-{{dateTimeArray1[1][dateTime1[1]]}}-{{dateTimeArray1[2][dateTime1[2]]}} {{dateTimeArray1[3][dateTime1[3]]}}:{{dateTimeArray1[4][dateTime1[4]]}}
-                </view>
-              </picker>
-            </view>
+            <input class="weui-input" placeholder-class="weui-input__placeholder" bindinput='meetNameChange' />
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_active">
+          <view class="weui-cell__bd">
+            <picker mode="date" value="{{date}}" start="2022-3-9" end="2033-3-9" bindchange="bindDateChange">
+              <view class="picker" style="color: var(--weui-FG-1);">选择入校日期:   {{date}}</view>
+            </picker>
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_active">
+          <view class="weui-cell__bd">
+            <picker mode="time" value="{{time}}" start="07:00" end="22:00" bindchange="bindTimeChange">
+              <view class="picker" style="color: var(--weui-FG-1);">选择入校时间:   {{time}}</view>
+            </picker>
           </view>
         </view>
       </view>

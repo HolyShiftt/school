@@ -17,4 +17,6 @@ public interface UserDao {
     int updateImg(Integer id,String img);
 
     int updPwd(String username, String pwd2);
+
+    int updState(Integer id, String date);
 }

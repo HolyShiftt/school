@@ -17,8 +17,7 @@ public class ApplyServiceImpl implements ApplyService {
             applyDao.applySub(apply);
             return "申请成功";
         }else {
-            return "您还有未审批的申请，不能重复申请";
+            return "您已提交该日的申请，请等待审批";
         }
-
     }
 }

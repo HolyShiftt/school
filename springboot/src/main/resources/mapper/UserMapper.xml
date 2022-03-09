@@ -10,6 +10,10 @@
         update user set password = #{pwd2}
         where username = #{username}
     </update>
+    <update id="updState">
+        update user set state = #{date}
+        where id = #{id}
+    </update>
     <select id="selectAll" resultType="com.school.index.pojo.User">
         select * from `user`
     </select>

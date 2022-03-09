@@ -10,5 +10,6 @@ public class User {
     private String password;
     private String img;
     private String stu_id;
-
+    private Integer role;
+    private String state;
 }

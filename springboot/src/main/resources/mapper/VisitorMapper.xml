@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.school.visitor.dao.VisitorDao">
+    <insert id="visitorApply">
+        insert into visitor
+        (time,phone,issue,meet_name,create_time) values
+        (#{time},#{phone},#{issue},#{meet_name},#{create_time})
+    </insert>
+    <update id="visitorChangeState">
+        update visitor set state = #{state}, user_id = #{userId}
+        where phone = #{phone} and state = 0
+    </update>
+
+
+    <select id="getApplyByPhone" resultType="java.lang.Integer">
+        select count(*) from visitor where phone=#{phone}  and TO_DAYS(NOW( )) - TO_DAYS(time) = 0
+    </select>
+    <select id="showMyVisitor" resultType="java.lang.Integer">
+        select state from visitor where phone = #{phone} and TO_DAYS(NOW( )) - TO_DAYS(time) = 0
+    </select>
+</mapper>

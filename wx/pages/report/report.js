@@ -29,6 +29,7 @@ Page({
       isolation:e.detail.value
     })
   },
+  
   chooseLocation: function () {
     var that = this;
     wx.getSetting({
@@ -71,6 +72,7 @@ Page({
   },
 
   report: function () {
+    var that = this
     if(this.data.address==''){
       wx.showToast({
         title: '请先选择地址',
@@ -92,11 +94,14 @@ Page({
           isolation:this.data.isolation
         },
         success: function (d) {
+          
           if (d.data == "填报成功") {
             wx.showToast({
               title: d.data,
               icon: 'success',
-              success: function () {}
+              success: function () {
+                wx.setStorageSync("state",that.formatDate(new Date()))
+              }
             })
           } else {
             wx.showToast({
@@ -109,6 +114,16 @@ Page({
       })
     }
   },
+  formatDate: function(date) {
+    let year = date.getFullYear()
+    let month = date.getMonth() + 1
+    month = month.toString()
+    month[1] ? month=month :month='0' + month
+    let day = date.getDate()
+    day = day.toString()
+    day[1] ? day=day : day='0' + day
+    return year+"-"+month+"-"+day
+   },
   /**
    * 生命周期函数--监听页面加载
    */

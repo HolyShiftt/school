@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    isManager:false,
+    isStudent:false,
   },
 
   goWebPage: function (event) {
@@ -23,15 +24,23 @@ Page({
 
   goFeedback: function () {
     wx.navigateTo({
-      url: '../other/feedback',
-      success: function () {}, //成功后的回调；
+      url: '../other/feedback'
     })
   },
 
   goApply: function () {
     wx.navigateTo({
-      url: '../apply/myapply',
-      success: function () {}, //成功后的回调；
+      url: '../apply/myapply'
+    })
+  },
+  goUpdPwd: function () {
+    wx.navigateTo({
+      url: '../other/password'
+    })
+  },
+  goReport: function () {
+    wx.switchTab({
+      url: '../report/report'
     })
   },
   /**
@@ -55,6 +64,17 @@ Page({
     if(!wx.getStorageSync("username")){
       wx.navigateTo({
         url: '../login/login'
+      })
+    }
+    if(wx.getStorageSync("role") == 2){
+      this.setData({
+        isManager: false,
+        isStudent: true,
+      })
+    }else if(wx.getStorageSync("role") == 1){
+      this.setData({
+        isManager: true,
+        isStudent: false,
       })
     }
   },

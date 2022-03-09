@@ -42,6 +42,8 @@ Page({
                 }
                 wx.setStorageSync("id",d.data.data.id);
                 wx.setStorageSync("name",d.data.data.name);
+                wx.setStorageSync("role",d.data.data.role);
+                wx.setStorageSync("state",d.data.data.state)
                 wx.showToast({
                   title: "登录成功",
                   icon: 'success',
