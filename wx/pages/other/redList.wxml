@@ -1,0 +1,22 @@
+<template name="tableTemp">
+  <view>
+    <view class="table">
+      <view class="tr">
+        <block wx:for="{{title}}" wx:key="{{index}}">
+          <view class="th left">{{item}}</view>
+        </block>
+      </view>
+      <view class="tr" wx:for="{{contentItem}}" wx:key="index">
+        <block wx:for="{{item}}" wx:key="index">
+          <view class="td left">{{item}}</view>
+        </block>
+      </view>
+    </view>
+  </view>
+</template>
+<view style="margin-left: 220px;margin-top: 10px;">
+  <h2>未填人数： {{count}}</h2>
+</view>
+<view class="tb1">
+  <template is="tableTemp" data="{{...tableInfo}}" />
+</view>

@@ -22,4 +22,9 @@ public class OtherServiceImpl implements OtherService {
     public List<Feedback> feedbackList(Integer id) {
         return otherDao.feedbackList(id);
     }
+
+    @Override
+    public int feedbackReplay(Integer id, String replay) {
+        return otherDao.feedbackReplay(id,replay);
+    }
 }

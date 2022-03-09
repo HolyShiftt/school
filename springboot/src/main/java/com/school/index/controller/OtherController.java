@@ -29,4 +29,11 @@ public class OtherController {
     public Res feedbackList(Integer id){
         return Res.success(otherService.feedbackList(id));
     }
+
+    @RequestMapping("/feedbackReplay")
+    @ResponseBody
+    public Res feedbackReplay(Integer id,String replay){
+        return Res.success(otherService.feedbackReplay(id,replay));
+    }
+
 }

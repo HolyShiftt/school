@@ -9,4 +9,6 @@ public interface OtherService {
     int subFeedback(String title, String content,String time, Integer id);
 
     List<Feedback> feedbackList(Integer id);
+
+    int feedbackReplay(Integer id,String replay);
 }

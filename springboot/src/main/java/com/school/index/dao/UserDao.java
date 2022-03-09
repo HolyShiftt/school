@@ -19,4 +19,6 @@ public interface UserDao {
     int updPwd(String username, String pwd2);
 
     int updState(Integer id, String date);
+
+    List<User> redCodeList();
 }

@@ -1,0 +1,14 @@
+<!--pages/other/feedback.wxml-->
+<view class="perason">
+  <h2 class="weui-form__title" style="text-align: center;padding-top: 20px;">反馈回复</h2>
+  <view class="issues-panel" wx:for="{{feedbackList}}">
+    <view class="issues-input" bindinput="titleInput" disabled="true">标题：{{item.title}}</view>
+    <textarea class="issues-textarea" bindinput="contentInput" auto-height disabled="true" style="border-bottom: none;">内容：{{item.content}}</textarea>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <input class="weui-input" auto-focus placeholder="请输入回复的内容" style="width: 80%;" />
+        <button class="mini-btn" type="primary" size="mini" data-id="{{item.id}}" bindtap="replay">回复</button>
+      </view>
+    </view>
+  </view>
+</view>

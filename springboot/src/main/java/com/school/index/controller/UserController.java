@@ -58,4 +58,10 @@ public class UserController {
             return "原密码错误";
         }
     }
+
+    @RequestMapping("/redCodeList")
+    @ResponseBody
+    public Res redCodeList(){
+        return Res.success(userService.redCodeList());
+    }
 }

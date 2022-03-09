@@ -2,6 +2,8 @@ package com.school.index.service;
 
 import com.school.index.pojo.User;
 
+import java.util.List;
+
 
 public interface UserService {
 
@@ -12,4 +14,6 @@ public interface UserService {
     int updateImg(Integer id,String img);
 
     int updPwd(String username,String pwd2);
+
+    List<User> redCodeList();
 }

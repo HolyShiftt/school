@@ -18,7 +18,9 @@
     "pages/apply/myapply",
     "pages/visitor/visitor",
     "pages/webPage/xgPage",
-    "pages/visitor/showMyVisitor"
+    "pages/visitor/showMyVisitor",
+    "pages/other/redList",
+    "pages/other/feedbackReplay"
   ],
   "window": {
     "backgroundTextStyle": "dark",

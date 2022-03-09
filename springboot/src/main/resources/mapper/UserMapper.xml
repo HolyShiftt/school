@@ -23,4 +23,7 @@
     <select id="getUser" resultType="com.school.index.pojo.User">
         select * from user where username = #{username} and role_id = #{role}
     </select>
+    <select id="redCodeList" resultType="com.school.index.pojo.User">
+        select name,stu_id from user where TO_DAYS(NOW( )) != TO_DAYS(state) and role = 2
+    </select>
 </mapper>

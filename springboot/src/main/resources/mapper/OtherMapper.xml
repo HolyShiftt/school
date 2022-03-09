@@ -7,7 +7,16 @@
         insert into feedback (title, content, time, user_id) values
         (#{title},#{content},#{time},#{id})
     </insert>
+    <update id="feedbackReplay">
+        update feedback set replay = #{replay}
+        where id = #{id}
+    </update>
     <select id="feedbackList" resultType="com.school.index.pojo.Feedback">
-        select * from feedback where user_id = #{id}
+        select * from feedback
+        <where>
+            <if test="id != null">
+               and user_id = #{id}
+            </if>
+        </where>
     </select>
 </mapper>

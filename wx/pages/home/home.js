@@ -12,10 +12,13 @@ Page({
   goWebPage: function (event) {
     wx.navigateTo({
       url: '../webPage/'+event.target.dataset.web,
-      success: function () {}, //成功后的回调；
     })
   },
-
+  toRedList: function (event) {
+    wx.navigateTo({
+      url: '../other/redList'
+    })
+  },
   goCode:function() {
     wx.switchTab({
       url: '../home/code'
@@ -25,6 +28,11 @@ Page({
   goFeedback: function () {
     wx.navigateTo({
       url: '../other/feedback'
+    })
+  },
+  goFeedbackReplay: function () {
+    wx.navigateTo({
+      url: '../other/feedbackReplay'
     })
   },
 
