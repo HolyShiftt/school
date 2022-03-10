@@ -6,8 +6,8 @@
     <textarea class="issues-textarea" bindinput="contentInput" auto-height disabled="true" style="border-bottom: none;">内容：{{item.content}}</textarea>
     <view class="weui-cells weui-cells_after-title">
       <view class="weui-cell weui-cell_input">
-        <input class="weui-input" auto-focus placeholder="请输入回复的内容" style="width: 80%;" />
-        <button class="mini-btn" type="primary" size="mini" data-id="{{item.id}}" bindtap="replay">回复</button>
+        <input class="weui-input" auto-focus placeholder="请输入回复的内容" style="width: 80%;" bindinput="doReplay" data-id="{{item.id}}" />
+        <button class="mini-btn" type="primary" size="mini" data-id="{{item.id}}" data-replay="{{replay}}" bindtap="replay">回复</button>
       </view>
     </view>
   </view>

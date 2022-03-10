@@ -19,6 +19,4 @@ public class Visitor {
 
     private Integer state;
 
-    private Integer user_id;
-
 }

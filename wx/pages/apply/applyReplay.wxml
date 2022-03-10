@@ -1,0 +1,17 @@
+<view class="perason">
+  <h2 class="weui-form__title" style="text-align: center;padding-top: 20px;">申请审批</h2>
+  <view class="issues-panel" wx:for="{{List}}">
+    <view class="issues-input" bindinput="titleInput" disabled="true">姓名:{{item.name}}</view>
+    <view class="issues-input" bindinput="titleInput" disabled="true">学号:{{item.stuId}}</view>
+    <view class="issues-input" bindinput="contentInput" auto-height disabled="true" style="border-bottom: none;">出行方式: {{item.transport}}</view>
+    <view class="issues-input" bindinput="contentInput" auto-height disabled="true" style="border-bottom: none;">地点：{{item.place}}</view>
+    <view class="issues-input" bindinput="contentInput" auto-height disabled="true" style="border-bottom: none;">开始时间: {{item.start_time}}</view>
+    <view class="issues-input" bindinput="contentInput" auto-height disabled="true" style="border-bottom: none;">结束时间: {{item.end_time}}</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <button class="mini-btn" type="primary" size="mini" data-id="{{item.id}}" data-replay="1" bindtap="agree">通过</button>
+        <button class="mini-btn" type="warn" size="mini" data-id="{{item.id}}" data-replay="2" bindtap="disagree">驳回</button>
+      </view>
+    </view>
+  </view>
+</view>

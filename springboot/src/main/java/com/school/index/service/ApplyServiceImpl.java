@@ -5,6 +5,8 @@ import com.school.index.pojo.Apply;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ApplyServiceImpl implements ApplyService {
 
@@ -19,5 +21,16 @@ public class ApplyServiceImpl implements ApplyService {
         }else {
             return "您已提交该日的申请，请等待审批";
         }
+    }
+
+    @Override
+    public List<Apply> applyListNoReplay() {
+        return applyDao.applyListNoReplay();
+    }
+
+    @Override
+    public String applyReplay(Integer id, String replay,String reason) {
+        applyDao.applyReplay(id,replay,reason);
+        return null;
     }
 }

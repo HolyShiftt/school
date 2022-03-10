@@ -7,6 +7,10 @@ public class Apply {
 
     private Integer id;
 
+    private String name;
+
+    private String stuId;
+
     private Integer stu_id;
 
     private String issue;

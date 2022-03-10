@@ -16,4 +16,6 @@ public interface UserService {
     int updPwd(String username,String pwd2);
 
     List<User> redCodeList();
+
+    String addUser(User user);
 }

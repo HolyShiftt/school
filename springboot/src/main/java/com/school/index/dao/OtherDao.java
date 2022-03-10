@@ -12,6 +12,8 @@ public interface OtherDao {
 
     List<Feedback> feedbackList(Integer id);
 
+    List<Feedback> feedbackListNoReplay();
+
     int feedbackReplay(Integer id,String replay);
 
 }

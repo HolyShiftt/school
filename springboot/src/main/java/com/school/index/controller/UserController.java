@@ -64,4 +64,18 @@ public class UserController {
     public Res redCodeList(){
         return Res.success(userService.redCodeList());
     }
+
+    @RequestMapping("/addUser")
+    @ResponseBody
+    public Res addUser(String username,String name,Integer role){
+        User user = new User();
+        user.setUsername(username);
+        user.setPassword(username);
+        user.setName(name);
+        if (role == 2){
+            user.setStu_id(username);
+        }
+        user.setRole(role);
+        return Res.success(userService.addUser(user));
+    }
 }

@@ -24,7 +24,21 @@ Page({
       url: '../home/code'
     })
   },
-
+  goCount: function () {
+    wx.navigateTo({
+      url: '../person/count'
+    })
+  },
+  goNotice:function () {
+    wx.navigateTo({
+      url: '../notice/notice'
+    })
+  },
+  goVisitor:function () {
+    wx.navigateTo({
+      url: '../visitor/visitorReplay'
+    })
+  },
   goFeedback: function () {
     wx.navigateTo({
       url: '../other/feedback'
@@ -41,9 +55,19 @@ Page({
       url: '../apply/myapply'
     })
   },
+  goApplyReplay: function () {
+    wx.navigateTo({
+      url: '../apply/applyReplay'
+    })
+  },
   goUpdPwd: function () {
     wx.navigateTo({
       url: '../other/password'
+    })
+  },
+  goKf: function () {
+    wx.navigateTo({
+      url: '../person/issues'
     })
   },
   goReport: function () {

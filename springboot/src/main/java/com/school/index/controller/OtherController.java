@@ -30,6 +30,12 @@ public class OtherController {
         return Res.success(otherService.feedbackList(id));
     }
 
+    @RequestMapping("/feedbackListNoReplay")
+    @ResponseBody
+    public Res feedbackListNoReplay(){
+        return Res.success(otherService.feedbackListNoReplay());
+    }
+
     @RequestMapping("/feedbackReplay")
     @ResponseBody
     public Res feedbackReplay(Integer id,String replay){

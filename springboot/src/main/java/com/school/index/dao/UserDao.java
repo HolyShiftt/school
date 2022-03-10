@@ -21,4 +21,6 @@ public interface UserDao {
     int updState(Integer id, String date);
 
     List<User> redCodeList();
+
+    int addUser(User user);
 }

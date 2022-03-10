@@ -24,6 +24,11 @@ public class OtherServiceImpl implements OtherService {
     }
 
     @Override
+    public List<Feedback> feedbackListNoReplay() {
+        return otherDao.feedbackListNoReplay();
+    }
+
+    @Override
     public int feedbackReplay(Integer id, String replay) {
         return otherDao.feedbackReplay(id,replay);
     }

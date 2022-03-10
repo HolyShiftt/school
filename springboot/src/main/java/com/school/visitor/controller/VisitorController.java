@@ -1,6 +1,7 @@
 package com.school.visitor.controller;
 
 import com.school.index.pojo.Apply;
+import com.school.index.pojo.Res;
 import com.school.visitor.pojo.Visitor;
 import com.school.visitor.service.VisitorService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,13 +27,19 @@ public class VisitorController {
 
     @ResponseBody
     @RequestMapping("/visitorChangeState")
-    public String visitorChangeState(Integer id, Integer userId,Integer state) {
-        return visitorService.visitorChangeState(id, userId,state);
+    public String visitorChangeState(Integer id, Integer state) {
+        return visitorService.visitorChangeState(id, state);
     }
 
     @ResponseBody
     @RequestMapping("/showMyVisitor")
     public String showMyVisitor(String phone) {
         return visitorService.showMyVisitor(phone);
+    }
+
+    @ResponseBody
+    @RequestMapping("/showVisitorList")
+    public Res showVisitorList() {
+        return Res.success(visitorService.showVisitorList());
     }
 }

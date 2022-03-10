@@ -8,7 +8,16 @@
         (stu_id,issue,transport,place,start_time,end_time,state,create_time) values
         (#{stu_id},#{issue},#{transport},#{place},#{start_time},#{end_time},0,#{create_time})
     </insert>
+    <update id="applyReplay">
+        update apply set state = #{replay}, reason =#{reason}
+        where id = #{id}
+    </update>
     <select id="lastApply" resultType="java.lang.Integer">
         select * from apply where stu_id = #{id} and state = 0 limit 1
+    </select>
+    <select id="applyListNoReplay" resultType="com.school.index.pojo.Apply">
+        select a.*,u.name,u.stu_id as stuId from apply a
+        left join user u on a.stu_id = u.id
+        where a.state = 0
     </select>
 </mapper>

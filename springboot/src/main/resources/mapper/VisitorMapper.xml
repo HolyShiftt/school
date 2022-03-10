@@ -8,7 +8,7 @@
         (#{time},#{phone},#{issue},#{meet_name},#{create_time})
     </insert>
     <update id="visitorChangeState">
-        update visitor set state = #{state}, user_id = #{userId}
+        update visitor set state = #{state}
         where phone = #{phone} and state = 0
     </update>
 
@@ -18,5 +18,8 @@
     </select>
     <select id="showMyVisitor" resultType="java.lang.Integer">
         select state from visitor where phone = #{phone} and TO_DAYS(NOW( )) - TO_DAYS(time) = 0
+    </select>
+    <select id="showVisitorList" resultType="com.school.visitor.pojo.Visitor">
+        select * from visitor where state = 0
     </select>
 </mapper>

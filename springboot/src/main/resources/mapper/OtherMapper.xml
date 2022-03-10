@@ -8,7 +8,7 @@
         (#{title},#{content},#{time},#{id})
     </insert>
     <update id="feedbackReplay">
-        update feedback set replay = #{replay}
+        update feedback set reply = #{replay}
         where id = #{id}
     </update>
     <select id="feedbackList" resultType="com.school.index.pojo.Feedback">
@@ -18,5 +18,8 @@
                and user_id = #{id}
             </if>
         </where>
+    </select>
+    <select id="feedbackListNoReplay" resultType="com.school.index.pojo.Feedback">
+        select * from feedback where reply is null
     </select>
 </mapper>

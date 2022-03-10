@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    feedbackList:'',
+    List:'',
     replay: [],
   },
 
@@ -15,7 +15,21 @@ Page({
   onLoad: function (options) {
 
   },
-
+  replay:function (event) {
+    var that = this
+    wx.request({
+      url: 'http://127.0.0.1:8080/apply/applyReplay',
+      data: {
+        id:event.target.dataset.id,
+        replay:event.target.dataset.replay,
+      },
+      success: function (d) {
+        if(d.data.msg == "成功"){
+          that.onshow();
+        }
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -33,40 +47,15 @@ Page({
   onShow: function () {
     var that = this;
     wx.request({
-      url: 'http://127.0.0.1:8080/other/feedbackListNoReplay',
-      data: {
-        id:wx.getStorageSync('id')
-      },
+      url: 'http://127.0.0.1:8080/visitor/showVisitorList',
       success: function (d) {
-        for (const iterator of d.data.data) {
-          if(!iterator.reply){
-            iterator.reply = ""
-          }
-        }
         that.setData({
-          feedbackList: d.data.data
+          List: d.data.data
         })
       }
     })
   },
 
-  replay: function (event) {
-    var that = this
-    console.log(event.target.dataset)
-    wx.request({
-      url: 'http://127.0.0.1:8080/other/feedbackReplay',
-      data: {
-        id:event.target.dataset.id,
-        replay:event.target.dataset.replay
-      },
-      success: function (d) {
-        that.setData({
-          replay : ""
-        })
-        that.onShow()
-      }
-    })
-  },
   /**
    * 生命周期函数--监听页面隐藏
    */

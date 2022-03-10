@@ -1,0 +1,10 @@
+<!--issues.wxml-->
+<view class="perason">
+  <view class="issues-panel">
+    <input class="issues-input" placeholder="请输入标题" bindinput="titleInput" />
+    <textarea class="issues-textarea" placeholder="请输入内容" bindinput="contentInput" auto-height></textarea>
+  </view>
+  <view class="submit-btn" bindtap="submit">
+    <text>发布公告</text>
+  </view>
+</view>

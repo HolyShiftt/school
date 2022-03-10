@@ -1,0 +1,15 @@
+<view class="perason">
+  <h2 class="weui-form__title" style="text-align: center;padding-top: 20px;">访客审批</h2>
+  <view class="issues-panel" wx:for="{{List}}">
+    <view class="issues-input" bindinput="titleInput" disabled="true">手机号码:{{item.phone}}</view>
+    <view class="issues-input" bindinput="titleInput" disabled="true">时间:{{item.time}}</view>
+    <view class="issues-input" bindinput="contentInput" auto-height disabled="true" style="border-bottom: none;">预约事由: {{item.issue}}</view>
+    <view class="issues-input" bindinput="contentInput" auto-height disabled="true" style="border-bottom: none;">受访人姓名：{{item.meet_name}}</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <button class="mini-btn" type="primary" size="mini" data-id="{{item.id}}" data-replay="1" bindtap="replay">通过</button>
+        <button class="mini-btn" type="warn" size="mini" data-id="{{item.id}}" data-replay="2" bindtap="replay">驳回</button>
+      </view>
+    </view>
+  </view>
+</view>

@@ -37,4 +37,14 @@ public class UserServiceImpl implements UserService {
     public List<User> redCodeList() {
         return userDao.redCodeList();
     }
+
+    @Override
+    public String addUser(User user) {
+        if (userDao.getUserByUsername(user.getUsername()) == null){
+            userDao.addUser(user);
+            return "添加成功";
+        }else{
+            return "该用户已存在";
+        }
+    }
 }

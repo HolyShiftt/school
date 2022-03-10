@@ -20,7 +20,11 @@
     "pages/webPage/xgPage",
     "pages/visitor/showMyVisitor",
     "pages/other/redList",
-    "pages/other/feedbackReplay"
+    "pages/other/feedbackReplay",
+    "pages/person/count",
+    "pages/apply/applyReplay",
+    "pages/visitor/visitorReplay",
+    "pages/notice/notice"
   ],
   "window": {
     "backgroundTextStyle": "dark",

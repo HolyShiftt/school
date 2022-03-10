@@ -10,5 +10,7 @@ public interface OtherService {
 
     List<Feedback> feedbackList(Integer id);
 
+    List<Feedback> feedbackListNoReplay();
+
     int feedbackReplay(Integer id,String replay);
 }

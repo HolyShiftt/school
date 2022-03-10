@@ -6,6 +6,8 @@ import com.school.visitor.service.VisitorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class VisitorServiceImpl implements VisitorService {
 
@@ -23,8 +25,8 @@ public class VisitorServiceImpl implements VisitorService {
     }
 
     @Override
-    public String visitorChangeState(Integer id, Integer userId,Integer state) {
-        visitorDao.visitorChangeState(id, userId,state);
+    public String visitorChangeState(Integer id, Integer state) {
+        visitorDao.visitorChangeState(id, state);
         if (state == 1)
         { return "审批成功";
         }else{
@@ -42,5 +44,10 @@ public class VisitorServiceImpl implements VisitorService {
         }else{
             return "申请已被驳回,请重新申请";
         }
+    }
+
+    @Override
+    public List<Visitor> showVisitorList() {
+        return visitorDao.showVisitorList();
     }
 }

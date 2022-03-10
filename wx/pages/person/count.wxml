@@ -1,0 +1,21 @@
+<view class="perason">
+  账号/学号（密码默认与账号相同）：
+  <view class="issues-panel">
+    <input class="issues-input" bindinput="username" />
+  </view>
+  姓名：
+  <view class="issues-panel">
+    <input class="issues-input" bindinput="name" />
+  </view>
+  角色：
+  <view>
+    <radio-group class="weui-cell weui-cell_active" style="display: flex;text-align: center;" bindchange="radioChange">
+          <label class="radio" wx:for="{{radio1}}" style="margin-right: 60px;">
+            <radio value="{{item.value}}" checked="{{item.checked}}" />{{item.name}}
+          </label>
+        </radio-group>
+  </view>
+  <view class="submit-btn" bindtap="submit">
+    <text>提交</text>
+  </view>
+</view>
