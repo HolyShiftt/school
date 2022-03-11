@@ -15,12 +15,14 @@ public class ApplyServiceImpl implements ApplyService {
 
     @Override
     public String applySub(Apply apply) {
-        if (applyDao.lastApply(apply.getStu_id())==0){
+        try {
+            applyDao.lastApply(apply.getStu_id());
+            return "您已提交该日的申请，请等待审批";
+        }catch (Exception e){
             applyDao.applySub(apply);
             return "申请成功";
-        }else {
-            return "您已提交该日的申请，请等待审批";
         }
+
     }
 
     @Override

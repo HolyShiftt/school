@@ -5,8 +5,8 @@
 
     <insert id="applySub">
         insert into apply
-        (stu_id,issue,transport,place,start_time,end_time,state,create_time) values
-        (#{stu_id},#{issue},#{transport},#{place},#{start_time},#{end_time},0,#{create_time})
+        (stu_id,issue,transport,place,start_time,end_time,state) values
+        (#{stu_id},#{issue},#{transport},#{place},#{start_time},#{end_time},0)
     </insert>
     <update id="applyReplay">
         update apply set state = #{replay}, reason =#{reason}

@@ -24,7 +24,7 @@ Page({
   submit:function () {
     var TIME = util.formatTime(new Date());
     wx.request({
-      url: 'http://127.0.0.1:8080/notice/Addnotice',
+      url: 'http://127.0.0.1:8080/notice/addNotice',
       data: {
         title: this.data.title,
         content: this.data.content,
