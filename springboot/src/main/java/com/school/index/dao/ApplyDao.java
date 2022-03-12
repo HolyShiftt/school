@@ -13,5 +13,7 @@ public interface ApplyDao {
 
     List<Apply> applyListNoReplay();
 
+    List<Apply> myApply(Integer id);
+
     int applyReplay(Integer id, String replay, String reason);
 }

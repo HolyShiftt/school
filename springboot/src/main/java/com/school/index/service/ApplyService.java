@@ -9,5 +9,7 @@ public interface ApplyService {
 
     List<Apply> applyListNoReplay();
 
+    List<Apply> myApply(Integer id);
+
     String applyReplay(Integer id, String replay,String reason);
 }

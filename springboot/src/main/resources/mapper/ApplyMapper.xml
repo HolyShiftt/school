@@ -20,4 +20,9 @@
         left join user u on a.stu_id = u.id
         where a.state = 0
     </select>
+    <select id="myApply" resultType="com.school.index.pojo.Apply">
+        select a.*,u.name,u.stu_id as stuId from apply a
+        left join user u on a.stu_id = u.id
+        where a.stu_id = #{id}
+    </select>
 </mapper>

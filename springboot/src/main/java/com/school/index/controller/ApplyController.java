@@ -30,6 +30,12 @@ public class ApplyController {
        return Res.success(applyService.applyListNoReplay());
     }
 
+    @RequestMapping("/myApply")
+    @ResponseBody
+    public Res myApply(Integer id) {
+        return Res.success(applyService.myApply(id));
+    }
+
 
     @RequestMapping("/applyReplay")
     @ResponseBody

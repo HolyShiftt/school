@@ -1,14 +1,13 @@
 <!--pages/apply/myapply.wxml-->
 <view class="perason">
   <h2 class="weui-form__title" style="text-align: center;padding-top: 20px;">我的申请</h2>
-  <view class="issues-panel" wx:for="{{applyList}}">
-    <view class="issues-input" bindinput="titleInput" disabled="true">申请时间：{{item.create_time}}</view>
+  <view class="issues-panel" wx:for="{{List}}">
+    <view class="issues-input" bindinput="titleInput" disabled="true">请假事由：{{item.issue}}</view>
     <textarea class="issues-textarea" bindinput="contentInput" auto-height disabled="true">
-      <text>请假事由：{{item.issue}}\n</text> 
       <text>目的地：{{item.place}}\n</text> 
       <text>开始时间：{{item.start_time}}\n</text>
       <text>结束时间：{{item.end_time}}\n</text>
     </textarea>
-    <view class="issues-input" bindinput="titleInput" disabled="true">管理员意见：{{item.state}}</view>
+    <view class="issues-input" bindinput="titleInput" disabled="true">管理员意见：{{item.state==1?"同意":item.state==2?"驳回":"审批中"}}</view>
   </view>
 </view>

@@ -31,6 +31,11 @@ public class ApplyServiceImpl implements ApplyService {
     }
 
     @Override
+    public List<Apply> myApply(Integer id) {
+        return applyDao.myApply(id);
+    }
+
+    @Override
     public String applyReplay(Integer id, String replay,String reason) {
         applyDao.applyReplay(id,replay,reason);
         return null;

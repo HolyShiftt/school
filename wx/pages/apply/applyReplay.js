@@ -38,7 +38,7 @@ Page({
       },
       success: function (d) {
         if(d.data.msg == "成功"){
-          that.onshow();
+          that.onShow();
         }
       }
     })
