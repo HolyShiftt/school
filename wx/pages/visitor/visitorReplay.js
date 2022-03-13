@@ -18,10 +18,10 @@ Page({
   replay:function (event) {
     var that = this
     wx.request({
-      url: 'http://127.0.0.1:8080/apply/applyReplay',
+      url: 'http://127.0.0.1:8080/visitor/visitorChangeState',
       data: {
         id:event.target.dataset.id,
-        replay:event.target.dataset.replay,
+        state:event.target.dataset.replay,
       },
       success: function (d) {
         if(d.data.msg == "成功"){

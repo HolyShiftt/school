@@ -26,6 +26,21 @@ Page({
         meet_name: this.data.meetName,
         time: this.data.date+" "+this.data.time
       },
+      success:function(d){
+        if(d.data == "您还有未审批的申请，不能重复申请"){
+          wx.showToast({
+            title:'不能重复申请',
+            icon: 'error',
+            duration: 2000
+          })
+        }else{
+          wx.showToast({
+            title: d.data,
+            icon: 'success',
+            duration: 2000
+          })
+        }
+      }
     })
   },
   bindDateChange: function(e) {
