@@ -1,7 +1,7 @@
 <!--pages/login/login.wxml-->
 <view class="container"> 
  <view class="login-icon"> 
- <image class="login-img" src="../../icon/logo.png"></image> 
+ <image class="login-img" src="../../icon/logo.webp"></image> 
  </view> 
  <view class="login-from"> 
   
@@ -14,11 +14,12 @@
  <view class="line"></view> 
   
  <!--密码-->
- <view class="inputView"> 
+ <view class="inputView" style="margin-top:30px;"> 
  <image class="keyImage" src="../../icon/password.png"></image> 
  <label class="loginLab">密码</label> 
  <input class="inputText" password="true" placeholder="请输入密码" bindinput="passwordInput" /> 
  </view> 
+ <view class="line"></view> 
   
  <!--按钮-->
  <view class="loginBtnView" style="margin-top: 30px;"> 

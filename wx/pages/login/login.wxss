@@ -8,7 +8,6 @@ page{
   flex-direction: column; 
   padding: 0; 
   box-sizing: border-box; 
-  background-color: #f2f2f2
  } 
    
  /*登录图片*/
@@ -63,7 +62,6 @@ page{
  .loginBtnView { 
   width: 100%; 
   height: auto; 
-  background-color: #f2f2f2; 
   margin-top: 0px; 
   margin-bottom: 0px; 
   padding-bottom: 0px; 

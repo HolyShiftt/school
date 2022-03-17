@@ -1,4 +1,5 @@
 <view style="text-align: center;margin-top: 100px;">
   <image src="../../img/greenCode.png" wx:if="{{green}}"></image>
   <image src="../../img/redCode.png" wx:if="{{red}}"></image>
+  <text class="user-motto">{{time}}</text>
 </view>
