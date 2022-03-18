@@ -25,28 +25,35 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 @RequestMapping("code")
 public class toCodeController {
-    private static final int BLACK = 0xFF000000;
     private static final int WHITE = 0xFFFFFFFF;
+    private static final int RED = 0xDC143C;
+    private static final int GREEN = 0x008001;
 
     private toCodeController() {
     }
 
-    public static BufferedImage toBufferedImage(BitMatrix matrix) {
+    public static BufferedImage toBufferedImage(BitMatrix matrix,Integer isHealth) {
         int width = matrix.getWidth();
         int height = matrix.getHeight();
+        int color;
+        if (isHealth == 0){
+            color = RED;
+        }else{
+            color = GREEN;
+        }
         BufferedImage image = new BufferedImage(width, height,
                 BufferedImage.TYPE_INT_RGB);
         for (int x = 0; x < width; x++) {
             for (int y = 0; y < height; y++) {
-                image.setRGB(x, y, matrix.get(x, y) ? BLACK : WHITE);
+                image.setRGB(x, y, matrix.get(x, y) ? color : WHITE);
             }
         }
         return image;
     }
 
-    public static void writeToFile(BitMatrix matrix, String format, File file)
+    public static void writeToFile(BitMatrix matrix, String format, File file,Integer isHealth)
             throws IOException {
-        BufferedImage image = toBufferedImage(matrix);
+        BufferedImage image = toBufferedImage(matrix,isHealth);
         if (!ImageIO.write(image, format, file)) {
             throw new IOException("Could not write an image of format "
                     + format + " to " + file);
@@ -54,8 +61,8 @@ public class toCodeController {
     }
 
     public static void writeToStream(BitMatrix matrix, String format,
-                                     OutputStream stream) throws IOException {
-        BufferedImage image = toBufferedImage(matrix);
+                                     OutputStream stream,Integer isHealth) throws IOException {
+        BufferedImage image = toBufferedImage(matrix,isHealth);
         if (!ImageIO.write(image, format, stream)) {
             throw new IOException("Could not write an image of format " + format);
         }
@@ -63,10 +70,16 @@ public class toCodeController {
 
     @RequestMapping("/showCode")
     @ResponseBody
-    public Res showCode() throws Exception {
-        String text = "http://www.baidu.com"; // 二维码内容
-        int width = 300; // 二维码图片宽度
-        int height = 300; // 二维码图片高度
+    public Res showCode(String stuId,String name, Integer isHealth) throws Exception {
+        String health;
+        if (isHealth == 1) {
+            health = "健康";
+        }else{
+            health = "不健康";
+        }
+        String text = stuId+" "+name+" "+health; // 二维码内容
+        int width = 400; // 二维码图片宽度
+        int height = 400; // 二维码图片高度
         String format = "jpg";// 二维码的图片格式
 
         Hashtable<EncodeHintType, String> hints = new Hashtable<EncodeHintType, String>();
@@ -75,8 +88,8 @@ public class toCodeController {
         BitMatrix bitMatrix = new MultiFormatWriter().encode(text,
                 BarcodeFormat.QR_CODE, width, height, hints);
         // 生成二维码
-        File outputFile = new File("d:" + File.separator + "new.jpg");
-        toCodeController.writeToFile(bitMatrix, format, outputFile);
+        File outputFile = new File("C:/Users/Administrator/Desktop//毕设相关/school//wx/img" + File.separator + "code.jpg");
+        toCodeController.writeToFile(bitMatrix, format, outputFile,isHealth);
         return Res.success(outputFile);
     }
 }

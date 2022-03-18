@@ -1,3 +1,9 @@
-<view style="text-align: center;margin-top: 100px;">
-  <image src="../../img/redCode.png"></image>
+
+<view class='container'>
+    <image bindtap="previewImg" mode="scaleToFill" src="{{imagePath}}"></image>
+</view>
+ 
+<!-- 画布，用来画二维码，只用来站位，不用来显示-->
+<view class="canvas-box">
+    <canvas hidden="{{canvasHidden}}" style="width: 686rpx;height: 686rpx;background:#f1f1f1;" canvas-id="mycanvas" />
 </view>

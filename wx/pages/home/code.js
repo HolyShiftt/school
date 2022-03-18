@@ -6,8 +6,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    green:true,
-    red:false,
+    imgUrl:'../../img/code.jpg',
+    stuId: wx.getStorageSync('stuId'),
+    name: wx.getStorageSync('name'),
+    isHealth: 0,
   },
 
   /**
@@ -37,15 +39,21 @@ Page({
   onShow: function () {
     if(wx.getStorageSync("state") == this.formatDate(new Date())){
       this.setData({
-        green:true,
-        red:false
+        isHealth:1
       })
     }else{
       this.setData({
-        green:false,
-        red:true
+        isHealth:0
       })
     }
+    wx.request({
+      url: 'http://127.0.0.1:8080/code/showCode',
+      data: {
+        stuId:this.data.stuId,
+        name:this.data.name,
+        isHealth: this.data.isHealth
+      },
+    })
   },
   formatDate: function(date) {
     let year = date.getFullYear()
@@ -75,7 +83,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    this.onShow();
   },
 
   /**

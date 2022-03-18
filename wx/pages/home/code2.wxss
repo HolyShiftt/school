@@ -1,1 +1,20 @@
-/* pages/home/code2.wxss */
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+width: 100%;
+height: 100%;
+}
+
+.container image {
+  width: 686rpx;
+  height: 686rpx;
+  background-color: #f9f9f9;
+}
+
+.canvas-box {
+  position: fixed;
+  top: 999999rpx;
+  left: 0;
+}
