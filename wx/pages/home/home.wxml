@@ -86,14 +86,12 @@
     </view>
   </view>
     <view style="height: 200px;width: 350px;border: black solid 1px;margin-left: 12px;border-radius: 5%;">
-      <view style="margin: 20px;">  请各位学生带好口罩 
-        <text class="noticeTime">2022-3-15</text>
+    <view wx:for="{{notice}}">
+      <view style="margin: 20px;">  {{item.title}} 
+        <text class="noticeTime">{{item.time}}</text>
         <view class="line"></view> 
       </view>
-      <view style="margin: 20px;">  请各位学生不要随意出入校门 
-        <text class="noticeTime">2022-3-15</text>
-        <view class="line"></view> 
-      </view>
+    </view>
     </view>
 
 </view>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.school.index.dao.NoticeDao">
+
+    <insert id="addNotice">
+        insert into notice (title, content , time) values
+        (#{title},#{content},#{time})
+    </insert>
+    <delete id="delNotice">
+        delete from notice where id = #{id}
+    </delete>
+    <select id="noticeList" resultType="com.school.index.pojo.Notice">
+        select * from notice
+        <if test="limit!= ''">
+            limit ${limit}
+        </if>
+    </select>
+</mapper>

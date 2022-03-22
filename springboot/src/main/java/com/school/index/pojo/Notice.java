@@ -1,6 +1,9 @@
 package com.school.index.pojo;
 
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import java.util.Date;
 
 @Data
 public class Notice {
@@ -11,6 +14,7 @@ public class Notice {
 
     private String content;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private String time;
 
 }

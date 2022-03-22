@@ -18,9 +18,9 @@ public class VisitorServiceImpl implements VisitorService {
     public String visitorApply(Visitor visitor) {
         if (visitorDao.getApplyByPhone(visitor.getPhone())==0){
             visitorDao.visitorApply(visitor);
-            return "申请成功！等待管理员审核";
+            return "申请成功";
         }else {
-            return "您还有未审批的申请，不能重复申请";
+            return "不能重复申请";
         }
     }
 

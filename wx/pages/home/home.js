@@ -7,6 +7,7 @@ Page({
   data: {
     isManager:false,
     isStudent:false,
+    notice:''
   },
 
   goWebPage: function (event) {
@@ -109,6 +110,16 @@ Page({
         isStudent: false,
       })
     }
+    var that = this;
+    wx.request({
+      url: 'http://127.0.0.1:8080/notice/noticeList',
+      data:{limit:3},
+      success: function (d) {
+        that.setData({
+          notice: d.data.data
+        })
+      }
+    })
   },
 
   /**
