@@ -18,6 +18,7 @@ public class ReportController {
     @RequestMapping("/doReport")
     @ResponseBody
     public String doReport(Report report){
+
         if (reportService.doReport(report)!=0){
             return "填报成功";
         }else {

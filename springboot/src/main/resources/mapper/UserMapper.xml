@@ -31,4 +31,8 @@
     <select id="redCodeList" resultType="com.school.index.pojo.User">
         select name,stu_id from user where TO_DAYS(NOW( )) != TO_DAYS(state) and role = 2
     </select>
+
+    <select id="redCodeList2" resultType="com.school.index.pojo.User">
+        select name,stu_id from user where state = "1999-01-01"
+    </select>
 </mapper>

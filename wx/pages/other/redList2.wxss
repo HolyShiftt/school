@@ -1,0 +1,42 @@
+
+.table-wrap{
+  top: 20rpx;
+}
+/* 表格代码   */
+.table{
+  background-color: white;
+  border:1px solid #dadada;
+  border-right:0;
+  border-bottom: 0;
+  width: 96%;
+  margin: auto;
+  margin-top: 10px;
+}
+.tr{
+  width:100%;
+  display: flex;
+  justify-content: space-between;
+}
+.th{
+  padding: 3px;
+  border-bottom: 1px solid #dadada;
+  border-right: 1px solid #dadada;
+  text-align: center;
+  width: 100%;
+  background-color: rgba(139, 182, 155, 0.12);
+  font-size: 28rpx;
+  color: rgba(23, 21, 23, 0.73);
+}
+.td{
+  padding: 3px;
+  border-bottom: 1px solid #dadada;
+  border-right: 1px solid #dadada;
+  text-align: center;
+  width: 100%;
+  font-size: 28rpx;
+  color: #666666;
+}
+
+.left{
+  text-align: left;
+}

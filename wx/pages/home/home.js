@@ -21,8 +21,8 @@ Page({
     })
   },
   goCode:function() {
-    wx.switchTab({
-      url: '../home/code'
+    wx.navigateTo({
+      url: '../other/redList2'
     })
   },
   goCount: function () {

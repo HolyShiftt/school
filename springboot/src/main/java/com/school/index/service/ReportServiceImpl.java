@@ -20,11 +20,16 @@ public class ReportServiceImpl implements ReportService {
 
     @Override
     public int doReport(Report report) {
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-        String date = formatter.format(new Date()) ;
-        // 修改用户状态
-        userDao.updState(report.getUser_id(),date);
+        if(!report.getNormal().equals("发热") || !report.getIsolation().equals("无需隔离")){
+            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+            String date = formatter.format(new Date()) ;
+            // 修改用户状态
+            userDao.updState(report.getUser_id(),date);
+        }else{
+            userDao.updState(report.getUser_id(),"1999-01-01");
+        }
         return reportDao.doReport(report);
+
     }
 
     @Override

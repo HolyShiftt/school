@@ -39,6 +39,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public List<User> redCodeList2() {
+        return userDao.redCodeList2();
+    }
+
+    @Override
     public String addUser(User user) {
         if (userDao.getUserByUsername(user.getUsername()) == null){
             userDao.addUser(user);

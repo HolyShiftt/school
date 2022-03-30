@@ -22,5 +22,7 @@ public interface UserDao {
 
     List<User> redCodeList();
 
+    List<User> redCodeList2();
+
     int addUser(User user);
 }

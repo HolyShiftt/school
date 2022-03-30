@@ -17,5 +17,7 @@ public interface UserService {
 
     List<User> redCodeList();
 
+    List<User> redCodeList2();
+
     String addUser(User user);
 }

@@ -65,6 +65,12 @@ public class UserController {
         return Res.success(userService.redCodeList());
     }
 
+    @RequestMapping("/redCodeList2")
+    @ResponseBody
+    public Res redCodeList2(){
+        return Res.success(userService.redCodeList2());
+    }
+
     @RequestMapping("/addUser")
     @ResponseBody
     public Res addUser(String username,String name,Integer role){
