@@ -60,10 +60,18 @@ Page({
         replay:event.target.dataset.replay
       },
       success: function (d) {
-        that.setData({
-          replay : ""
+        wx.showToast({
+          title: d.data.msg,
+          icon: 'success',
+          duration: 2000,
+          success: function () {
+            that.setData({
+              replay : ""
+            })
+            that.onShow()
+          }
         })
-        that.onShow()
+        
       }
     })
   },

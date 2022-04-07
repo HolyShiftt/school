@@ -37,9 +37,14 @@ Page({
         reasonId: 99
       },
       success: function (d) {
-        if(d.data.msg == "成功"){
-          that.onShow();
-        }
+        wx.showToast({
+          title: d.data.msg,
+          icon: 'success',
+          duration: 2000,
+          success: function () {
+          }
+        })
+        that.onShow();
       }
     })
   },
@@ -57,9 +62,14 @@ Page({
               reasonId:res.tapIndex,
             },
             success: function (d) {
-              if(d.data.msg == "成功"){
-                that.onShow();
-              }
+              wx.showToast({
+                title: d.data.msg,
+                icon: 'success',
+                duration: 2000,
+                success: function () {
+                  that.onShow();
+                }
+              })
             }
           })
         }

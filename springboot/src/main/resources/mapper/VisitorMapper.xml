@@ -9,7 +9,7 @@
     </insert>
     <update id="visitorChangeState">
         update visitor set state = #{state}
-        where phone = #{phone} and state = 0
+        where id = #{id} and state = 0
     </update>
 
 

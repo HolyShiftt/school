@@ -24,9 +24,14 @@ Page({
         state:event.target.dataset.replay,
       },
       success: function (d) {
-        if(d.data.msg == "成功"){
-          that.onshow();
-        }
+        wx.showToast({
+          title: d.data,
+          icon: 'success',
+          duration: 2000,
+          success: function () {
+            that.onShow();
+          }
+        })
       }
     })
   },
