@@ -11,7 +11,7 @@
         delete from notice where id = #{id}
     </delete>
     <select id="noticeList" resultType="com.school.index.pojo.Notice">
-        select * from notice
+        select * from notice order by time desc
         <if test="limit!= ''">
             limit ${limit}
         </if>

@@ -70,7 +70,7 @@ public class toCodeController {
 
     @RequestMapping("/showCode")
     @ResponseBody
-    public Res showCode(String stuId,String name, Integer isHealth) throws Exception {
+    public void showCode(String stuId,String name, Integer isHealth) throws Exception {
         String health;
         if (isHealth == 1) {
             health = "健康";
@@ -90,6 +90,5 @@ public class toCodeController {
         // 生成二维码
         File outputFile = new File("C:/Users/Administrator/Desktop//毕设相关/school//wx/img" + File.separator + "code.jpg");
         toCodeController.writeToFile(bitMatrix, format, outputFile,isHealth);
-        return Res.success(outputFile);
     }
 }

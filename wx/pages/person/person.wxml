@@ -7,7 +7,6 @@
       <image class="user-avatar" src="{{img}}"></image>
       <view class="user-title">
         <text class="user-name">{{name}}</text>
-        <text class="user-id">{{}}</text>
       </view>
       <text class="bind-btn">个人信息</text>
       <view class="btn-open">

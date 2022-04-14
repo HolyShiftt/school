@@ -42,7 +42,7 @@
     "useCompilerPlugins": false
   },
   "compileType": "miniprogram",
-  "libVersion": "2.21.0",
+  "libVersion": "2.23.4",
   "appid": "wxfcac5b81ac4e592f",
   "projectname": "校园疫情防控系统",
   "debugOptions": {

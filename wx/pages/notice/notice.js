@@ -39,7 +39,7 @@ Page({
             success: function () {
               setTimeout(function() {
                 wx.switchTab({
-                  url: '../person/person'
+                  url: '../home/home'
                 })
              }, 2000);
             }

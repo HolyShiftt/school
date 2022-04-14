@@ -100,7 +100,7 @@ Page({
               title: d.data,
               icon: 'success',
               success: function () {
-                if(that.data.radio1 != "发热" && that.data.radio2 == "无需隔离"){
+                if(that.data.normal != "发热" && that.data.isolation == "无需隔离"){
                   wx.setStorageSync("state",that.formatDate(new Date()))
                 }else{
                   wx.setStorageSync("state","1999-01-01")
