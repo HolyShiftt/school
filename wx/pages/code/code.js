@@ -15,7 +15,7 @@ Page({
       stuId : wx.getStorageSync('stuId'),
       name : wx.getStorageSync('name')
     })
-
+    this.onShow()
     
   },
 

@@ -88,7 +88,7 @@ public class toCodeController {
         BitMatrix bitMatrix = new MultiFormatWriter().encode(text,
                 BarcodeFormat.QR_CODE, width, height, hints);
         // 生成二维码
-        File outputFile = new File("C:/Users/Administrator/Desktop//毕设相关/school//wx/img" + File.separator + "code.jpg");
+        File outputFile = new File("D:/毕设/school/wx/img" + File.separator + "code.jpg");
         toCodeController.writeToFile(bitMatrix, format, outputFile,isHealth);
     }
 }
